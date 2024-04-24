@@ -1,22 +1,14 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
 const morgan = require('morgan');
 const { join, dirname } = require('path'); 
 const fileUrlToPath = require('url');
 const PORT = 3000;
 
-app.use(bodyParser.json());
-app.use(cors());
 //middlewares
 app.use(morgan('dev'));
 
 // Rutas
-const alojamientosRouter = require('./routes/alojamientos');
-
-app.use('/alojamientos', alojamientosRouter);
-
 app.get('/',(req,res)=>{
   res.sendFile(join(__dirname,'public/index.html'));
 });
