@@ -19,6 +19,11 @@ header {
     background-color: var(--oscuro);
 }
 
+header h2 {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
 .logo {
     color: #fff;
     padding-bottom: 40px;
@@ -211,11 +216,16 @@ section.intro {
 
 .habitacion {
     position: relative; /* Asegura que el rectángulo se coloque correctamente dentro de este contenedor */
+    margin-bottom: 20px;
 }
 
 .habitacion p {
     margin-top: 20px;
     color: var(--oscuro)
+}
+
+.habitacion:last-child {
+    margin-bottom: 80px;
 }
 
 .rectangulo {
