@@ -109,6 +109,7 @@ section.intro {
 }
 
 .lugar {
+    position: relative; /* Establece posicionamiento relativo para ajustar el texto encima de las imagenes */
     flex: 0 1 30%;
     text-align: center;
 }
@@ -131,6 +132,18 @@ section.intro {
     height: 300px;
     min-width: 300px;
     min-height: 300px;
+}
+
+.texto-encima {
+    position: absolute; /* Establece el posicionamiento absoluto */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde la izquierda */
+    color: white; /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 5px; /* Espaciado interior del texto */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    border-radius: 5px; /* Borde redondeado */
 }
 
 .footer {
