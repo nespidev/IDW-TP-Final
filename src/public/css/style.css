@@ -10,9 +10,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Montserrat, sans-serif; 
+}
+
+header {
+    background-color: var(--oscuro);
+}
+
+.logo {
+    color: #fff;
+    padding-bottom: 40px;
+}  
+
+/*  estilo alternativo texto de introduccion
+.intro {
+    padding-top: 80px;
+    padding-left: 6vw;
+    padding-bottom: 80px;
+} 
+*/
+
+.intro {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center; /* Centrado horizontal */
+}
+
+.intro h1 {
+    font-weight: 800;
+    font-size: 56px;
+}
+
+
+.intro h1, .intro p {
+    margin: 0; /* Elimina el margen predeterminado para evitar desplazamientos inesperados */
+}
+
 /* Estilo para la barra de nav */
 nav {
-    background-color: #333;
+    background-color: var(--oscuro);
+    font-weight: 700;
 }
 
 nav ul {
@@ -32,7 +71,7 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-    color: var(--claro);
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-family:Arial, Helvetica, sans-serif;
@@ -40,14 +79,20 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: var(--claro);
+    color: #000;
 }
 
 /* Estilo para body */
 body{
     font-size: 22px;
     background-color: #fff;
-    color: #555;
+    color: #000;
+}
+
+section.intro {
+    color: #fff;
+    background-color: var(--oscuro);
 }
 
 .container {
@@ -56,24 +101,24 @@ body{
     padding: 0 20px;
 }
 
-.featured-hotels{
+.lugares{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 50px  ;
 }
 
-.hotel {
+.lugar {
     flex: 0 1 30%;
     text-align: center;
 }
 
-.hotel img {
+.lugar img {
     width: 100%;
     border-radius: 10px;
 }
 
-.hotel a {
+.lugar a {
     color:#555;
     text-decoration: none;
     font-size: 18px;
@@ -82,7 +127,7 @@ body{
 }
 
 .footer {
-    background-color: #333;
+    background-color: var(--oscuro);
     color: #fff;
     text-align: center;
     padding: 30px 0;
