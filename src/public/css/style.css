@@ -98,7 +98,7 @@ section.intro {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 20px; /*Probando darle espacio a los container para no estar pegado al footer*/
     padding: 0 20px;
 }
 
@@ -106,7 +106,13 @@ section.intro {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 50px  ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.titulo {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .lugar {
@@ -131,7 +137,7 @@ section.intro {
     border-radius: 10px;
 }
 
-.img-cuadrada { /* para darle un aspecto cuadrado a la imagen*/
+.img-cuadrada { /* para darle un aspecto cuadrado a la imagen, cambiarlo a 4:3*/
     width: 300px;
     height: 300px;
     min-width: 300px;
@@ -184,6 +190,43 @@ section.intro {
     opacity: 0.8;
 }
 
+.habitacion {
+    overflow: hidden; /* Clearfix para contener elementos flotantes */
+}
+
+.habitacion .img-cuadrada, .rectangulo {
+    border-radius: 30px; /* Aplica bordes redondeados a habitacion y rectangulo */
+}
+
+.habitacion .img-cuadrada {
+    float: left; /* Coloca la imagen a la izquierda */
+    margin-right: 40px; /* Agrega un margen a la derecha para separar la imagen del texto */
+}
+
+.texto-habitacion {
+    margin-top: 20px;
+    padding-right: 40px;
+    width: 100%; /* Utiliza el 50% restante del ancho disponible */
+}
+
+.habitacion {
+    position: relative; /* Asegura que el rectángulo se coloque correctamente dentro de este contenedor */
+}
+
+.habitacion p {
+    margin-top: 20px;
+    color: var(--oscuro)
+}
+
+.rectangulo {
+    position: absolute; /* Posiciona el rectángulo de forma absoluta dentro del contenedor .habitacion */
+    top: 0; /* Lo alinea con la parte superior del contenedor */
+    left: 0; /* Lo alinea con el margen izquierdo del contenedor */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    border: 1px solid #ccc; /* Define el borde del rectángulo */
+    box-sizing: border-box; /* Incluye el tamaño del borde en el cálculo total del tamaño del rectángulo */
+}
 
 footer {
     background-color: var(--oscuro);
