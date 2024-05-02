@@ -80,6 +80,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: var(--claro);
+    border-radius: 10px;
     color: #000;
 }
 
@@ -127,10 +128,17 @@ section.intro {
     display: block;
 }
 
-.img-hotel { /* para darle un aspecto cuadrado a la imagen*/
+.img-cuadrada { /* para darle un aspecto cuadrado a la imagen*/
     width: 300px;
     height: 300px;
     min-width: 300px;
+    min-height: 300px;
+}
+
+.img-ancha { /* para darle un aspecto cuadrado a la imagen*/
+    width: 534px;
+    height: 300px;
+    min-width: 534px;
     min-height: 300px;
 }
 
