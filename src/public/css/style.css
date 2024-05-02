@@ -224,6 +224,12 @@ section.intro {
     color: var(--oscuro)
 }
 
+.habitacion .precio {
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 20px; /* Alineación en la parte inferior */
+    right: 30px; /* Alineación a la derecha */
+}
+
 .habitacion:last-child {
     margin-bottom: 80px;
 }
