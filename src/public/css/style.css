@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: Montserrat, sans-serif; 
+    font-family: Montserrat, sans-serif;
 }
 
 header {
@@ -130,5 +130,5 @@ section.intro {
     background-color: var(--oscuro);
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 30px;
 }

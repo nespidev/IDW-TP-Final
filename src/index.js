@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const { join, dirname } = require('path'); 
 const fileUrlToPath = require('url');
-const PORT = 3000;
+const PORT = 4000;
 
 //middlewares
 app.use(morgan('dev'));
