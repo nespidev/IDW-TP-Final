@@ -11,6 +11,16 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Usa el color del texto del elemento padre */
+}
+
+a:hover {
+    text-decoration: none; /* También elimina el subrayado en hover */
+}
+
+
 body {
     font-family: Montserrat, sans-serif;
 }
@@ -178,7 +188,7 @@ section.intro {
     display: block; /* Hace que la imagen sea un bloque para evitar espacios vacíos */
 }
 
-.hipervinculo-provincia::after {
+.hipervinculo-provincia::after{
     content: "";
     position: absolute;
     top: 0;
@@ -191,7 +201,20 @@ section.intro {
     border-radius: 10px
 }
 
-.hipervinculo-provincia:hover::after {
+.hipervinculo-habitacion::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px; /* Mismo tamaño que las imagenes que contiene (img-cuadrada) */
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 30px
+}
+
+.hipervinculo-provincia:hover::after, .hipervinculo-habitacion:hover::after {
     opacity: 0.8;
 }
 
@@ -219,6 +242,14 @@ section.intro {
     margin-bottom: 20px;
 }
 
+.nombre-hotel {
+    color: #000;
+}
+
+.nombre-hotel:hover {
+    color: var(--oscuro)
+}
+
 .habitacion p {
     margin-top: 20px;
     color: var(--oscuro)
@@ -242,6 +273,7 @@ section.intro {
     height: 100%; /* Ocupa todo el alto del contenedor */
     border: 1px solid #ccc; /* Define el borde del rectángulo */
     box-sizing: border-box; /* Incluye el tamaño del borde en el cálculo total del tamaño del rectángulo */
+    z-index: -1; /* Asegurar que esté detrás del texto */
 }
 
 footer {
