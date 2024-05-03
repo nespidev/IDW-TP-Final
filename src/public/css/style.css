@@ -2,7 +2,7 @@
     --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
     --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
     --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
-    --fondo: #FFFFFF; /* Define la variable y asigna el valor hexadecimal */
+    --fondo: rgba(239, 237, 210, 0.4); /* Define la variable y asigna el valor hexadecimal */
   }
 
 * {
@@ -29,16 +29,15 @@ header {
     background-color: var(--oscuro);
 }
 
-header h2 {
-    padding-left: 20px;
-    padding-top: 10px;
-}
-
 .logo {
     color: #fff;
     padding-top: 5px;
-    padding-bottom: 40px;
+    padding-left: 10px;
 }  
+
+.logo img {
+    height: 40px
+}
 
 /*  estilo alternativo texto de introduccion
 .intro {
@@ -49,8 +48,8 @@ header h2 {
 */
 
 .intro {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 20px;
+    padding-bottom: 40px;
     text-align: center; /* Centrado horizontal */
 }
 
@@ -129,7 +128,7 @@ section.intro {
 
 .titulo {
     width: 100%;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .lugar {
@@ -220,17 +219,20 @@ section.intro {
     opacity: 0.8;
 }
 
-.habitacion {
+.habitacion ,.redes-sociales .imagenes-container {
     overflow: hidden; /* Clearfix para contener elementos flotantes */
+    border: 1px solid #ccc; /* Define el borde del rectángulo */
+    border-radius: 30px;
 }
 
-.habitacion .img-cuadrada, .rectangulo {
-    border-radius: 30px; /* Aplica bordes redondeados a habitacion y rectangulo */
+.habitacion .img-cuadrada, .rectangulo-borde {
+ /* Aplica bordes redondeados a habitacion y rectangulo */
 }
 
 .habitacion .img-cuadrada {
     float: left; /* Coloca la imagen a la izquierda */
     margin-right: 40px; /* Agrega un margen a la derecha para separar la imagen del texto */
+    border-radius: 30px;
 }
 
 .texto-habitacion {
@@ -267,7 +269,7 @@ section.intro {
     margin-bottom: 80px;
 }
 
-.rectangulo {
+.rectangulo-borde {
     position: absolute; /* Posiciona el rectángulo de forma absoluta dentro del contenedor .habitacion */
     top: 0; /* Lo alinea con la parte superior del contenedor */
     left: 0; /* Lo alinea con el margen izquierdo del contenedor */
@@ -275,7 +277,6 @@ section.intro {
     height: 100%; /* Ocupa todo el alto del contenedor */
     border: 1px solid #ccc; /* Define el borde del rectángulo */
     box-sizing: border-box; /* Incluye el tamaño del borde en el cálculo total del tamaño del rectángulo */
-    z-index: -1; /* Asegurar que esté detrás del texto */
 }
 
 footer {
@@ -283,4 +284,84 @@ footer {
     color: #fff;
     text-align: center;
     padding: 30px;
+}
+
+.pagina-institucional {
+    background-image: url('../img/paisaje-fondo.png'); /* Define la imagen de fondo */
+    background-repeat: no-repeat;
+    background-size: 100% 60%, 100% 50%;
+    background-position: left top, left bottom;
+}
+
+.rectangulo-opacidad {
+    position: fixed; /* Fijar el contenedor en la posición de la ventana */
+    top: 0px; /* Ajustar según sea necesario */
+    bottom: 0px; /* Ajustar según sea necesario */
+    left: 0;
+    right: 0;
+    background-color: var(--fondo); /* Color con opacidad */
+    z-index: -1; /* Colocar detrás de otros elementos */
+}
+
+.container-rect-redondeado {
+    width: 60%; /* Ancho del rectángulo */
+    max-width: 1000px; /* Ancho máximo */
+    margin: 30px auto; /* Centra el rectángulo horizontalmente */
+    padding: 40px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 90px; /* Bordes redondeados */
+}
+
+.container-rect-redondeado .titulo {
+    text-align: center;
+}
+
+.container-rect-redondeado div {
+    padding-bottom: 20px;
+}
+
+.container-rect-redondeado img {
+    float: left;
+    padding-right: 30px;
+    height: 100px;
+}
+
+.container-rect-redondeado p {
+    color: #414141;
+}
+
+.container-rect-redondeado strong {
+    font-weight: 600;
+}
+
+.pagina-contacto .container-rect-redondeado p {
+    text-align: center;
+
+}
+
+.pagina-contacto .redes-sociales {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 10px;
+    text-align: center; /* Centra los elementos secundarios horizontalmente */
+}
+
+.redes-sociales .imagenes-container {
+    display: inline-block; /* Ajusta el tamaño del contenedor al tamaño del contenido */
+    position: relative;
+    padding: 10px
+
+}
+
+.pagina-contacto .redes-sociales img {
+    max-width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: transparent; /* Color de fondo inicial */
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+.pagina-contacto .redes-sociales img:hover {
+    background-color: var(--claro);
 }
