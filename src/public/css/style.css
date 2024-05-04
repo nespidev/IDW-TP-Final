@@ -177,6 +177,11 @@ section.intro {
     font-size: 14px; /* Tamaño de fuente */
     font-weight: bold; /* Negrita */
     border-radius: 5px; /* Borde redondeado */
+    transition: color 0.3s ease
+}
+
+.lugar:hover .texto-encima {
+    color: var(--acento); /* Cambia el color del texto en hover */
 }
 
 .hipervinculo-provincia {
