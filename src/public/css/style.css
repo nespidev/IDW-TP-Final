@@ -224,9 +224,14 @@ section.intro {
     opacity: 0.8;
 }
 
-.habitacion ,.redes-sociales .imagenes-container {
+.habitacion {
     overflow: hidden; /* Clearfix para contener elementos flotantes */
-    border: 4px solid var(--claro); /* Define el borde del rectángulo */
+    border: 1px solid var(--claro); /* Define el borde del rectángulo */
+    border-radius: 30px;
+}
+
+.redes-sociales .imagenes-container {
+    border: 4px solid var(--oscuro); /* Define el borde del rectángulo */
     border-radius: 90px;
 }
 
