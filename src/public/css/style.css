@@ -2,7 +2,7 @@
     --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
     --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
     --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
-    --fondo: rgba(239, 237, 210, 0.4); /* Define la variable y asigna el valor hexadecimal */
+    --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
   }
 
 * {
@@ -226,12 +226,8 @@ section.intro {
 
 .habitacion ,.redes-sociales .imagenes-container {
     overflow: hidden; /* Clearfix para contener elementos flotantes */
-    border: 1px solid #ccc; /* Define el borde del rectángulo */
-    border-radius: 30px;
-}
-
-.habitacion .img-cuadrada, .rectangulo-borde {
- /* Aplica bordes redondeados a habitacion y rectangulo */
+    border: 1px solid var(--oscuro); /* Define el borde del rectángulo */
+    border-radius: 90px;
 }
 
 .habitacion .img-cuadrada {
@@ -313,7 +309,8 @@ footer {
     max-width: 1000px; /* Ancho máximo */
     margin: 30px auto; /* Centra el rectángulo horizontalmente */
     padding: 40px; /* Espaciado interno */
-    background-color: #fff; /* Fondo blanco */
+    background-color: var(--claro); /* Fondo blanco */
+    /* border: 1px solid #ccc; */
     border-radius: 90px; /* Bordes redondeados */
 }
 
