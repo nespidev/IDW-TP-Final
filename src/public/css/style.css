@@ -94,7 +94,14 @@ nav ul li a {
     transition: background-color 0.3s ease; /* Agrega una transición suave a la propiedad background-color */
 }
 
-nav ul li a:hover, nav ul li a.activo {
+nav ul li a:hover {
+    background-color: var(--claro);
+    border-radius: 10px;
+    color: #000;
+}
+
+nav ul li a.activo {
+    outline: 2px solid white;
     background-color: var(--claro);
     border-radius: 10px;
     color: #000;
