@@ -308,13 +308,19 @@ footer {
 }
 
 .container-rect-redondeado {
-    width: 60%; /* Ancho del rectángulo */
+    width: 80%; /* Ancho del rectángulo */
     max-width: 1000px; /* Ancho máximo */
+    min-width: min-content;
     margin: 30px auto; /* Centra el rectángulo horizontalmente */
     padding: 40px; /* Espaciado interno */
     background-color: var(--claro); /* Fondo blanco */
     /* border: 1px solid #ccc; */
     border-radius: 90px; /* Bordes redondeados */
+}
+
+.contactos .container-rect-redondeado {
+    justify-content: center;
+    align-items: center;
 }
 
 .container-rect-redondeado .titulo {
@@ -341,6 +347,10 @@ footer {
     font-weight: 600;
 }
 
+.datos-contacto {
+    flex-direction: column;
+}
+
 .pagina-contacto .container-rect-redondeado p {
     text-align: center;
 
@@ -351,6 +361,7 @@ footer {
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 10px;
     text-align: center; /* Centra los elementos secundarios horizontalmente */
+    justify-content: center;
 }
 
 .redes-sociales .imagenes-container {
