@@ -262,6 +262,7 @@ section.intro {
 
 .habitacion p {
     margin-top: 20px;
+    margin-bottom: 2em;
     color: var(--oscuro)
 }
 
