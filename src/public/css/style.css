@@ -128,6 +128,7 @@ section.intro {
 .titulo {
     width: 100%;
     padding-bottom: 10px;
+    justify-content: center;
 }
 
 .lugares{
@@ -321,11 +322,13 @@ footer {
 }
 
 .container-rect-redondeado div {
+    display: flex;
+    align-items: center;
     padding-bottom: 20px;
 }
 
 .container-rect-redondeado img {
-    float: left;
+
     padding-right: 30px;
     height: 100px;
 }
