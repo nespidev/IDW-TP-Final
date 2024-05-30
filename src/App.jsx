@@ -9,7 +9,7 @@ import Contacto from './pages/Contacto.jsx'
 function App() {
   return (
     <>
-      <Contacto></Contacto>
+      <Home />
     </>
   )
 }
