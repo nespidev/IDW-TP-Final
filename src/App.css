@@ -1,42 +1,390 @@
+:root {
+  --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
+  --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
+  --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
+  --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+}
+
+a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Usa el color del texto del elemento padre */
+}
+
+a:hover {
+  text-decoration: none; /* También elimina el subrayado en hover */
+}
+
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+header {
+  background-color: var(--oscuro);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  color: #fff;
+  padding-top: 5px;
+  padding-left: 10px;
+}  
+
+.logo img {
+  height: 40px
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.intro {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center; /* Centrado horizontal */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.intro h1 {
+  font-weight: 800;
+  font-size: 56px;
 }
 
-.card {
-  padding: 2em;
+
+.intro h1, .intro p {
+  margin: 0; /* Elimina el margen predeterminado para evitar desplazamientos inesperados */
 }
 
-.read-the-docs {
-  color: #888;
+/* Estilo para la barra de nav */
+nav {
+  background-color: var(--oscuro);
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease; /* Agrega una transición suave a la propiedad background-color */
+}
+
+nav ul li a:hover {
+  background-color: var(--claro);
+  border-radius: 10px;
+  color: #000;
+}
+
+nav ul li a.activo {
+  outline: 2px solid white;
+  background-color: var(--claro);
+  border-radius: 10px;
+  color: #000;
+}
+
+/* Estilo para body */
+body{
+  font-size: 22px;
+  background-color: var(--fondo);
+  color: #000;
+}
+
+section.intro {
+  color: #fff;
+  background-color: var(--oscuro);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto 20px; /*Probando darle espacio a los container para no estar pegado al footer*/
+  padding: 0 20px;
+}
+
+.titulo {
+  width: 100%;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.lugares{
+  display: grid;
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0.3em 0.15em;
+
+}
+
+.lugar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-row: 2 / 3;
+  grid-column: span 2;
+}
+
+.lugar-1 {
+  grid-row: 1 / 2;
+  grid-column: span 3;
+}
+
+.lugar-2 {
+  grid-row: 1 / 2;
+  grid-column: span 3;
+}
+
+.lugar img { /* para darle un aspecto cuadrado a la imagen, cambiarlo a 4:3*/
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.habitaciones img {
+  height: 300px;
+  width: 300px;
+}
+
+.texto-encima {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 1;
+  color: white; /* Color del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 5px; /* Espaciado interior del texto */
+  font-size: 14px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  border-radius: 10px; /* Borde redondeado */
+  transition: color 0.3s ease
+}
+
+.lugar:hover .texto-encima {
+  color: var(--acento); /* Cambia el color del texto en hover */
+}
+
+.hipervinculo-provincia {
+  grid-area: 1 / 1 / 3 / 3;
+  display: block;
+  position: relative;
+  overflow: hidden; /* Asegura que el gradiente no se salga del contenedor */
+}
+
+.hipervinculo-provincia img {
+  display: block; /* Hace que la imagen sea un bloque para evitar espacios vacíos */
+}
+
+.hipervinculo-provincia::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px
+}
+
+.hipervinculo-habitacion::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px; /* Mismo tamaño que las imagenes que contiene (img-cuadrada) */
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 30px
+}
+
+.hipervinculo-provincia:hover::after, .hipervinculo-habitacion:hover::after {
+  opacity: 0.8;
+}
+
+.habitacion {
+  overflow: hidden; /* Clearfix para contener elementos flotantes */
+  border: 1px solid var(--claro); /* Define el borde del rectángulo */
+  border-radius: 30px;
+}
+
+.redes-sociales .imagenes-container {
+  border: 4px solid var(--oscuro); /* Define el borde del rectángulo */
+  border-radius: 90px;
+}
+
+.habitacion .img-cuadrada {
+  float: left; /* Coloca la imagen a la izquierda */
+  margin-right: 40px; /* Agrega un margen a la derecha para separar la imagen del texto */
+  border-radius: 30px;
+}
+
+.texto-habitacion {
+  margin-top: 20px;
+  padding-right: 40px;
+  width: 100%; /* Utiliza el 50% restante del ancho disponible */
+}
+
+.habitacion {
+  position: relative; /* Asegura que el rectángulo se coloque correctamente dentro de este contenedor */
+  margin-bottom: 20px;
+}
+
+.nombre-hotel {
+  color: #000;
+}
+
+.nombre-hotel:hover {
+  color: var(--oscuro)
+}
+
+.habitacion p {
+  margin-top: 20px;
+  margin-bottom: 2em;
+  color: var(--oscuro)
+}
+
+.habitacion .precio {
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: 20px; /* Alineación en la parte inferior */
+  right: 30px; /* Alineación a la derecha */
+}
+
+.habitacion:last-child {
+  margin-bottom: 80px;
+}
+
+.rectangulo-borde {
+  position: absolute; /* Posiciona el rectángulo de forma absoluta dentro del contenedor .habitacion */
+  top: 0; /* Lo alinea con la parte superior del contenedor */
+  left: 0; /* Lo alinea con el margen izquierdo del contenedor */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  border: 1px solid #ccc; /* Define el borde del rectángulo */
+  box-sizing: border-box; /* Incluye el tamaño del borde en el cálculo total del tamaño del rectángulo */
+}
+
+footer {
+  background-color: var(--oscuro);
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+
+.pagina-institucional > header, nav, main, footer {
+  position: relative; /* Para asegurar que el contenido esté por encima de la imagen */
+  z-index: 1;
+}
+
+.imagen-fondo-institucional {
+  width: 100%;
+  height: 100vh; /* Usa el 100% de la altura de la ventana */
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+  z-index: 0;
+  object-fit: cover; /* Mantiene la relación de aspecto de la imagen y cubre todo el contenedor */
+  object-position: center top; /* Posiciona la imagen centrada en la parte inferior del contenedor */
+  opacity: 0.5;
+  border-radius: 90px;
+}
+
+.container-rect-redondeado {
+  width: 80%; /* Ancho del rectángulo */
+  max-width: 1000px; /* Ancho máximo */
+  min-width: min-content;
+  margin: 30px auto; /* Centra el rectángulo horizontalmente */
+  padding: 40px; /* Espaciado interno */
+  background-color: var(--claro); /* Fondo blanco */
+  /* border: 1px solid #ccc; */
+  border-radius: 90px; /* Bordes redondeados */
+}
+
+.contactos .container-rect-redondeado {
+  justify-content: center;
+  align-items: center;
+}
+
+.container-rect-redondeado .titulo {
+  text-align: center;
+}
+
+.container-rect-redondeado div {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.container-rect-redondeado img {
+
+  padding-right: 30px;
+  height: 100px;
+}
+
+.container-rect-redondeado p {
+  color: #414141;
+}
+
+.container-rect-redondeado strong {
+  font-weight: 600;
+}
+
+.datos-contacto {
+  flex-direction: column;
+}
+
+.pagina-contacto .container-rect-redondeado p {
+  text-align: center;
+
+}
+
+.pagina-contacto .redes-sociales {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 10px;
+  text-align: center; /* Centra los elementos secundarios horizontalmente */
+  justify-content: center;
+}
+
+.redes-sociales .imagenes-container {
+  display: inline-block; /* Ajusta el tamaño del contenedor al tamaño del contenido */
+  position: relative;
+  padding: 10px;
+  border-color: var(--oscuro);
+  
+}
+
+.pagina-contacto .redes-sociales img {
+  max-width: 100%;
+  height: 100px;
+  margin: 5px;
+  padding: 0;
+  background-color: transparent; /* Color de fondo inicial */
+  border-radius: 20px;
+  transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+.pagina-contacto .redes-sociales img:hover {
+  background-color: var(--oscuro);
 }
