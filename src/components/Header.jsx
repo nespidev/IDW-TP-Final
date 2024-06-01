@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
+
 export default function Header() {
     return (
         <header>
-            <div class="logo">
-                <a href="/index.html"><img src="../img/logo/logo.png" alt="Voy.com"/></a>
+            <div className="logo">
+                <Link to="/"><img src="../img/logo/logo.png" alt="Voy.com"/></Link>
             </div>
         </header>
     );
