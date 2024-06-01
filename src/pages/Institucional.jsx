@@ -1,21 +1,13 @@
+import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
 export default function Institucional() {
   return (
         <div className="pagina-institucional">
             <img className="imagen-fondo-institucional" src='src/assets/paisaje-fondo.jpg'/>
-            <header>
-                <div className="logo">
-                    <a href="/index.html"><img src="../img/logo/logo.png" alt="Voy.com"/></a>
-                </div>
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="#">Alojamientos</a></li>
-                    <li><a href="/contacto.html">Contacto</a></li>
-                    <li><a className="activo" href="#">Institucional</a></li>
-                </ul>
-            </nav>
+            <Header />
+            <Navbar />
             <main>
                 <section className="intro">
                     <h1>¿Quienes somos?</h1>

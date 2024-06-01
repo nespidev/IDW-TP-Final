@@ -1,20 +1,12 @@
+import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
 export default function Contacto() {
   return (
       <div className="pagina-contacto">
-          <header>
-              <div className="logo">
-                  <a href="/index.html"><img src="../img/logo/logo.png" alt="Voy.com"/></a>
-              </div>
-          </header>
-          <nav>
-              <ul>
-                  <li><a href="/index.html">Inicio</a></li>
-                  <li><a href="#">Alojamientos</a></li>
-                  <li><a className="activo" href="/contacto.html">Contacto</a></li>
-                  <li><a href="/institucional.html">Institucional</a></li>
-              </ul>
-          </nav>
+          <Header />
+          <Navbar />
           <main>
               <section className="intro">
                   <h1>Contacto</h1>

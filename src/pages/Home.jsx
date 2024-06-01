@@ -1,21 +1,12 @@
 import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
 export default function Home() {
   return (
       <>
-        <header>
-            <div class="logo">
-                <a href="/index.html"><img src="../img/logo/logo.png" alt="Voy.com"/></a>
-            </div>
-        </header>
-        <nav>
-            <ul>
-                <li><a class="activo" href="#">Inicio</a></li>
-                <li><a href="#">Alojamientos</a></li>
-                <li><a href="/contacto.html">Contacto</a></li>
-                <li><a href="/institucional.html">Institucional</a></li>
-            </ul>
-        </nav>
+        <Header />
+        <Navbar />
         <main>
             <section class="intro">
                 <h1>Encuentra tu alojamiento ideal</h1>
