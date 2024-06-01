@@ -1,83 +1,78 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Header from "../components/Header"
 
 export default function Home() {
   return (
       <>
-        <Header />
-        <Navbar />
+
         <main>
-            <section class="intro">
+            <section className="intro">
                 <h1>Encuentra tu alojamiento ideal</h1>
                 <p>Hospedate con estilo en los mejores destinos del país</p>
             </section>
 
-            <section class="container seccion-lugares">
-                <div class="titulo">
+            <section className="container seccion-lugares">
+                <div className="titulo">
                     <h2>Destinos populares</h2>
                 </div>
-                <div class="lugares">
-                    <div class="lugar lugar-1">
-                        <a class="hipervinculo-provincia" href="#"><img src="../img/img1.png" alt="paisaje"/></a>
-                        <div class="texto-encima">Buenos Aires</div>
+                <div className="lugares">
+                    <div className="lugar lugar-1">
+                        <a className="hipervinculo-provincia" href="#"><img src="../img/img1.png" alt="paisaje"/></a>
+                        <div className="texto-encima">Buenos Aires</div>
                     </div>
-                    <div class="lugar lugar-2">
-                        <a class="hipervinculo-provincia" href="#"><img src="../img/img2.png" alt="paisaje"/></a>
-                        <div class="texto-encima">Jujuy</div>
+                    <div className="lugar lugar-2">
+                        <a className="hipervinculo-provincia" href="#"><img src="../img/img2.png" alt="paisaje"/></a>
+                        <div className="texto-encima">Jujuy</div>
                     </div>
-                    <div class="lugar lugar-3">
-                        <a class="hipervinculo-provincia" href="#"><img src="../img/img3.jpeg" alt="paisaje"/></a>
-                        <div class="texto-encima">Misiones</div>
+                    <div className="lugar lugar-3">
+                        <a className="hipervinculo-provincia" href="#"><img src="../img/img3.jpeg" alt="paisaje"/></a>
+                        <div className="texto-encima">Misiones</div>
                     </div>
-                    <div class="lugar lugar-4">
-                        <a class="hipervinculo-provincia" href="#"><img src="../img/img4.png" alt="paisaje"/></a>
-                        <div class="texto-encima">Córdoba</div>
+                    <div className="lugar lugar-4">
+                        <a className="hipervinculo-provincia" href="#"><img src="../img/img4.png" alt="paisaje"/></a>
+                        <div className="texto-encima">Córdoba</div>
                     </div>
-                    <div class="lugar lugar-5"> 
-                        <a class="hipervinculo-provincia" href="#"><img src="../img/img5.jpeg" alt="paisaje"/></a>
-                        <div class="texto-encima">Rio Negro</div>
+                    <div className="lugar lugar-5"> 
+                        <a className="hipervinculo-provincia" href="#"><img src="../img/img5.jpeg" alt="paisaje"/></a>
+                        <div className="texto-encima">Rio Negro</div>
                     </div>
                 </div>
             </section>
 
-            <section class="container habitaciones">
-                <div class="titulo">
+            <section className="container habitaciones">
+                <div className="titulo">
                     <h2>Habitaciones mejor puntuadas</h2>
                 </div>
-                <div class="habitacion">
-                    <a class="hipervinculo-habitacion"  href="#"><img class="img-cuadrada" src="../img/hotel1.jpg" alt="habitacion"/></a>
-                    <div class="texto-habitacion">
-                        <h4><a class="nombre-hotel" href="#">Grand Hotel</a></h4>
+                <div className="habitacion">
+                    <a className="hipervinculo-habitacion"  href="#"><img className="img-cuadrada" src="../img/hotel1.jpg" alt="habitacion"/></a>
+                    <div className="texto-habitacion">
+                        <h4><a className="nombre-hotel" href="#">Grand Hotel</a></h4>
                         <h6>Buenos Aires, calle LaCalle 404</h6>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dicta cumque autem voluptate praesentium minus optio voluptates saepe eaque, corporis aut laboriosam repellat est fugit quo quasi soluta enim accusantium.</p>
-                        <h4 class="precio">$400.000</h4>
+                        <h4 className="precio">$400.000</h4>
                     </div>
                 </div>
 
-                <div class="habitacion">
-                    <a class="hipervinculo-habitacion" href="#"><img class="img-cuadrada" src="../img/hotel2.jpg" alt="habitacion"/></a>
-                    <div class="texto-habitacion">
-                        <h4><a class="nombre-hotel" href="#">Luxury Palace</a></h4>
+                <div className="habitacion">
+                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="../img/hotel2.jpg" alt="habitacion"/></a>
+                    <div className="texto-habitacion">
+                        <h4><a className="nombre-hotel" href="#">Luxury Palace</a></h4>
                         <h6>Cordoba, Av. UnaAvenda 1910</h6>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dicta cumque autem voluptate praesentium minus optio voluptates saepe eaque, corporis aut laboriosam repellat est fugit quo quasi soluta enim accusantium.</p>
                     </div>
-                    <h4 class="precio">$350.000</h4>
+                    <h4 className="precio">$350.000</h4>
                 </div>
 
-                <div class="habitacion">
-                    <a class="hipervinculo-habitacion" href="#"><img class="img-cuadrada" src="../img/hotel3.jpg" alt="habitacion"/></a>
-                    <div class="texto-habitacion">
-                        <h4><a class="nombre-hotel" href="#">Deluxe Dreams</a></h4>
+                <div className="habitacion">
+                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="../img/hotel3.jpg" alt="habitacion"/></a>
+                    <div className="texto-habitacion">
+                        <h4><a className="nombre-hotel" href="#">Deluxe Dreams</a></h4>
                         <h6>Rio Negro, Av. NuestraAvenida 64</h6>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dicta cumque autem voluptate praesentium minus optio voluptates saepe eaque, corporis aut laboriosam repellat est fugit quo quasi soluta enim accusantium.</p>
                     </div>
-                    <h4 class="precio">$600.000</h4>
+                    <h4 className="precio">$600.000</h4>
                 </div>
 
             </section>
         </main>
-        <Footer />
       </>
   )
 }

@@ -292,7 +292,7 @@ footer {
 }
 
 
-.pagina-institucional > header, nav, main, footer {
+.pagina-institucional > main, header, nav, footer {
   position: relative; /* Para asegurar que el contenido esté por encima de la imagen */
   z-index: 1;
 }

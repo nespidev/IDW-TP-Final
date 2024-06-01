@@ -1,13 +1,9 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Header from "../components/Header"
 
 export default function Institucional() {
   return (
         <div className="pagina-institucional">
             <img className="imagen-fondo-institucional" src='src/assets/paisaje-fondo.jpg'/>
-            <Header />
-            <Navbar />
+
             <main>
                 <section className="intro">
                     <h1>¿Quienes somos?</h1>
@@ -31,7 +27,6 @@ export default function Institucional() {
                     </div>
                 </section>
             </main>
-            <Footer />
       </div>
   )
 }

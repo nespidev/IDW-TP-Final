@@ -1,12 +1,8 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Header from "../components/Header"
 
 export default function Contacto() {
   return (
       <div className="pagina-contacto">
-          <Header />
-          <Navbar />
+
           <main>
               <section className="intro">
                   <h1>Contacto</h1>
@@ -34,7 +30,6 @@ export default function Contacto() {
                   </div>
               </section>
           </main>
-          <Footer />
       </div>
   )
 }

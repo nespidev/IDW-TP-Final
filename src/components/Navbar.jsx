@@ -1,11 +1,13 @@
+import { Link, useLocation } from 'react-router-dom'
 export default function Navbar() {
+    const location = useLocation()
     return (
         <nav>
         <ul>
-            <li><a class="activo" href="#">Inicio</a></li>
-            <li><a href="#">Alojamientos</a></li>
-            <li><a href="/contacto.html">Contacto</a></li>
-            <li><a href="/institucional.html">Institucional</a></li>
+            <li ><Link className={location.pathname === '/' ? 'activo' : ''} to="/">Inicio</Link></li>
+            <li><Link className={location.pathname === '/Alojamientos' ? 'activo' : ''}>Alojamientos</Link></li>
+            <li><Link className={location.pathname === '/Contacto' ? 'activo' : ''}to="/Contacto">Contacto</Link></li>
+            <li><Link className={location.pathname === '/Institucional' ? 'activo' : ''} to="/Institucional">Institucional</Link></li>
         </ul>
     </nav>
     );
