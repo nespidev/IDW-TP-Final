@@ -1,0 +1,57 @@
+:root {
+    --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
+    --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
+    --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
+    --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Usa el color del texto del elemento padre */
+}
+
+a:hover {
+    text-decoration: none; /* También elimina el subrayado en hover */
+}
+
+.formulario form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    margin: 100px auto;
+}
+
+.formulario button{
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario input{
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.formulario input:focus{
+    outline: none;
+}
+
+::placeholder {
+    color: var(--fondo);
+    opacity: 0.5;
+    text-align: center;
+}

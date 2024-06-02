@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home.jsx'
 import Institucional from './pages/Institucional.jsx'
 import Contacto from './pages/Contacto.jsx'
+import AddTipoDeAlojamiento from './pages/form/AddTipoDeAlojamiento.jsx'
 
 import Navbar from './components/Navbar.jsx'
 import Header from './components/Header.jsx'
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/Contacto" element={<Contacto />}></Route>
         <Route path="/Institucional" element={<Institucional />}></Route>
+        <Route path="/AddTipoDeAlojamiento" element={<AddTipoDeAlojamiento />}></Route>
       </Routes>
 
       <Footer />
