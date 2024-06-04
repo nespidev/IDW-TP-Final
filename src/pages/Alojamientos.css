@@ -20,20 +20,22 @@ a:hover {
     text-decoration: none; /* También elimina el subrayado en hover */
 }
 
-.formulario {
-    margin: 200px auto;
-}
-
-.formulario form {
+form, .container-rect-redondeado {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap;
 }
 
-.descripcion-enviar {
-    column-gap: 20px;
+.container-rect-redondeado div {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.descripcion-boton {
+    gap: 20px;
     justify-content: space-between;
     padding: 20px;
 }
@@ -42,7 +44,9 @@ a:hover {
     display: none;
 }
 
-.formulario button{
+button{
+    font-size: 1em;
+    font-weight: 600;
     background-color: var(--oscuro);
     color: var(--claro);
     border: 3px solid var(--oscuro);
@@ -53,7 +57,7 @@ a:hover {
     transition-timing-function: ease; 
 }
 
-.formulario button:hover{
+button:hover{
     background-color: var(--oscuro);    
     color: var(--acento);
     border: 3px solid var(--acento);
@@ -61,7 +65,7 @@ a:hover {
     border-radius: 5px;
 }
 
-.formulario input{
+input{
     background-color: var(--oscuro);
     box-sizing: border-box;
     color: var(--claro);
@@ -73,7 +77,7 @@ a:hover {
     font-size: 1.4rem;
     transition: 0.3s;
 }
-.formulario input:focus{
+input:focus, input:hover{
     outline: none;
     border: 3px solid var(--acento)
 }
@@ -82,4 +86,28 @@ a:hover {
     color: var(--fondo);
     opacity: 0.5;
     text-align: center;
+}
+
+.container-alojamientos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-titulo-get > button {
+    margin-left: 20px;
+}
+
+.lista-alojamientos {
+    display: grid;
+    text-align: left;
+    padding: 0 0 ;
+    margin: 10px;
+    border: 1px solid var(--oscuro);
+    /* border-radius: 30px;  */
+}
+
+.lista-alojamientos > p {
+    padding: 0;
+    background-color: var(--oscuro);
+    color: var(--acento)
 }

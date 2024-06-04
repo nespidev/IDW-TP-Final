@@ -47,6 +47,7 @@ header {
   padding-top: 20px;
   padding-bottom: 40px;
   text-align: center; /* Centrado horizontal */
+  margin-bottom: 40px;
 }
 
 .intro h1 {
@@ -120,6 +121,7 @@ section.intro {
   max-width: 1200px;
   margin: 0 auto 20px; /*Probando darle espacio a los container para no estar pegado al footer*/
   padding: 0 20px;
+  margin-bottom: 40px;
 }
 
 .titulo {
@@ -289,6 +291,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 30px;
+  margin-top: 40px;
 }
 
 
@@ -313,7 +316,7 @@ footer {
 .container-rect-redondeado {
   width: 80%; /* Ancho del rectángulo */
   max-width: 1000px; /* Ancho máximo */
-  min-width: min-content;
+  /* min-width: min-content; */
   margin: 30px auto; /* Centra el rectángulo horizontalmente */
   padding: 40px; /* Espaciado interno */
   background-color: var(--claro); /* Fondo blanco */
@@ -333,7 +336,6 @@ footer {
 .container-rect-redondeado div {
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
 }
 
 .container-rect-redondeado img {
@@ -387,4 +389,11 @@ footer {
 
 .pagina-contacto .redes-sociales img:hover {
   background-color: var(--oscuro);
+}
+
+.container-institucional > section {
+  display: flex;
+  text-align: left;
+  flex-wrap: nowrap;
+  align-items: center;
 }
