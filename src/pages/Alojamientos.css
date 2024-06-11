@@ -40,7 +40,7 @@ form, .container-rect-redondeado {
     padding: 20px;
 }
 
-.descripcion-enviar label {
+.descripcion-boton label {
     display: none;
 }
 
@@ -110,4 +110,10 @@ input:focus, input:hover{
     padding: 0;
     background-color: var(--oscuro);
     color: var(--acento)
+} 
+
+.input-id-alojamiento {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50px;
 }

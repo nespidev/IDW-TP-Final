@@ -38,6 +38,7 @@ export default function AddTipoDeAlojamiento({ onAdd }) {
             if (response.ok) {
                 alert('Alojamiento agregado');
                 onAdd(); // Llama a la función de actualización
+                setDescripcion('')
             } else {
                 console.error('Error al agregar el alojamiento');
                 alert('Error al agregar el alojamiento');

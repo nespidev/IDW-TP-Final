@@ -7,7 +7,8 @@ export default function DeleteTipoDeAlojamiento({ onDelete }) {
         setAlojamientoId(e.target.value);
     };
 
-    const eliminarAlojamiento = async () => {
+    const eliminarAlojamiento = async (e) => {
+        e.preventDefault();
         try {
             const response = await fetch(`http://localhost:3001/tiposAlojamiento/deleteTipoAlojamiento/${alojamientoId}`, {
                 method: 'DELETE',
@@ -18,6 +19,7 @@ export default function DeleteTipoDeAlojamiento({ onDelete }) {
             if (response.ok) {
                 alert('Alojamiento eliminado con éxito.');
                 onDelete(); // Llama a la función de actualización
+                setAlojamientoId('')
             } else {
                 const errorText = await response.text();
                 console.error('Error al eliminar el alojamiento:', errorText);
@@ -30,7 +32,7 @@ export default function DeleteTipoDeAlojamiento({ onDelete }) {
     };
 
     return (
-        <div className='container-rect-redondeado container-delete-alojamiento'>
+        <form className='container-rect-redondeado container-delete-alojamiento' onSubmit={eliminarAlojamiento}>
             <h2>Eliminar tipo de alojamiento</h2>
             <div className='descripcion-boton'>
                 <input
@@ -40,10 +42,10 @@ export default function DeleteTipoDeAlojamiento({ onDelete }) {
                     placeholder="Ingrese el ID del alojamiento"
                     className='input-delete-alojamiento'
                 />
-                <button className='button-delete-alojamiento' onClick={eliminarAlojamiento}>
+                <button type="submit" className='button-delete-alojamiento'>
                     Eliminar Tipo
                 </button>
             </div>
-        </div>
+        </form>
     );
 }

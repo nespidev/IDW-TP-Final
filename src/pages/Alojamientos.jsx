@@ -22,7 +22,7 @@ export default function Alojamientos() {
             <AddTipoDeAlojamiento onAdd={handleRefresh} />
             <EditarTipoDeAlojamiento onEdit={handleRefresh} />
             <DeleteTipoDeAlojamiento onDelete={handleRefresh} />
-            <GetTipoDeAlojamientoById />
+            <GetTipoDeAlojamientoById refresh={refresh} />
             <GetTiposDeAlojamientos refresh={refresh} />
         </>
     );

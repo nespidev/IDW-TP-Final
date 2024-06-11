@@ -12,7 +12,8 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
         setDescripcion(e.target.value);
     };
 
-    const editarAlojamiento = async () => {
+    const editarAlojamiento = async (e) => {
+        e.preventDefault();
         try {
             const response = await fetch(`http://localhost:3001/tiposAlojamiento/putTipoAlojamiento/${alojamientoId}`, {
                 method: 'PUT',
@@ -27,6 +28,8 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
             if (response.ok) {
                 alert('Alojamiento actualizado con éxito.');
                 onEdit();
+                setAlojamientoId('')
+                setDescripcion('')
             } else {
                 const errorText = await response.text();
                 console.error('Error al actualizar el alojamiento:', errorText);
@@ -39,15 +42,15 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
     };
 
     return (
-        <div className='container-rect-redondeado container-edit-alojamiento'>
+        <form className='container-rect-redondeado container-edit-alojamiento'>
             <h2>Editar tipo de alojamiento</h2>
-            <div className='descripcion-boton'>
+            <div className='descripcion-boton' onSubmit={editarAlojamiento}>
                 <input
                     type="text"
                     value={alojamientoId}
                     onChange={handleInputChange}
-                    placeholder="Ingrese el ID del alojamiento"
-                    className='input-edit-alojamiento'
+                    placeholder="ID"
+                    className='input-id-alojamiento'
                 />
                 <input
                     type="text"
@@ -56,10 +59,10 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
                     placeholder="Ingrese la nueva descripción"
                     className='input-edit-descripcion'
                 />
-                <button className='button-edit-alojamiento' onClick={editarAlojamiento}>
+                <button type="submit" className='button-edit-alojamiento'>
                     Editar Tipo
                 </button>
             </div>
-        </div>
+        </form>
     );
 }
