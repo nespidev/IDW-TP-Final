@@ -16,7 +16,7 @@ export default function AlojamientosTipo() {
     return (
         <>
             <section className="intro">
-                <h1>Administrar alojamientos</h1>
+                <h1>Administrar tipos de alojamientos</h1>
                 <p> </p>
             </section>
             <AddTipoDeAlojamiento onAdd={handleRefresh} />

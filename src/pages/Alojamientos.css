@@ -1,0 +1,119 @@
+:root {
+    --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
+    --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
+    --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
+    --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Usa el color del texto del elemento padre */
+}
+
+a:hover {
+    text-decoration: none; /* También elimina el subrayado en hover */
+}
+
+form, .container-rect-redondeado {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.container-rect-redondeado div {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.descripcion-boton {
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.descripcion-boton label {
+    display: none;
+}
+
+button{
+    font-size: 1em;
+    font-weight: 600;
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: 3px solid var(--oscuro);
+    padding: 7px 17px;
+    border-radius: 5px;
+    transition-property: border, color; 
+    transition-duration: 0.3s; 
+    transition-timing-function: ease; 
+}
+
+button:hover{
+    background-color: var(--oscuro);    
+    color: var(--acento);
+    border: 3px solid var(--acento);
+    padding: 7px 17px;
+    border-radius: 5px;
+}
+
+input{
+    background-color: var(--oscuro);
+    box-sizing: border-box;
+    color: var(--claro);
+    border: none;
+    padding: 7px 17px;
+    height: 100%;
+    border: 3px solid var(--oscuro);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+input:focus, input:hover{
+    outline: none;
+    border: 3px solid var(--acento)
+}
+
+::placeholder {
+    color: var(--fondo);
+    opacity: 0.5;
+    text-align: center;
+}
+
+.container-alojamientos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-titulo-get > button {
+    margin-left: 20px;
+}
+
+.lista-alojamientos {
+    display: grid;
+    text-align: left;
+    padding: 0 0 ;
+    margin: 10px;
+    border: 1px solid var(--oscuro);
+    /* border-radius: 30px;  */
+}
+
+.lista-alojamientos > p {
+    padding: 0;
+    background-color: var(--oscuro);
+    color: var(--acento)
+} 
+
+.input-id-alojamiento {
+    padding-left: 0;
+    padding-right: 0;
+    width: 50px;
+}
