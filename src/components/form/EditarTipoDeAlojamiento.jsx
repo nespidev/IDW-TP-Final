@@ -13,7 +13,7 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
     };
 
     const editarAlojamiento = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Esto previene que la página se recargue
         try {
             const response = await fetch(`http://localhost:3001/tiposAlojamiento/putTipoAlojamiento/${alojamientoId}`, {
                 method: 'PUT',
@@ -28,8 +28,8 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
             if (response.ok) {
                 alert('Alojamiento actualizado con éxito.');
                 onEdit();
-                setAlojamientoId('')
-                setDescripcion('')
+                setAlojamientoId('');
+                setDescripcion('');
             } else {
                 const errorText = await response.text();
                 console.error('Error al actualizar el alojamiento:', errorText);
@@ -42,9 +42,9 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
     };
 
     return (
-        <form className='container-rect-redondeado container-edit-alojamiento'>
+        <form className='container-rect-redondeado container-edit-alojamiento' onSubmit={editarAlojamiento}>
             <h2>Editar tipo de alojamiento</h2>
-            <div className='descripcion-boton' onSubmit={editarAlojamiento}>
+            <div className='descripcion-boton'>
                 <input
                     type="text"
                     value={alojamientoId}
