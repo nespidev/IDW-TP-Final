@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Alojamientos.css';
-import AddTipoDeAlojamiento from '../components/form/AddTipoDeAlojamiento';
-import GetTiposDeAlojamientos from '../components/form/GetTiposDeAlojamientos';
-import DeleteTipoDeAlojamiento from '../components/form/DeleteTipoDeAlojamiento';
-import GetTipoDeAlojamientoById from '../components/form/GetTipoDeAlojamientoById';
+import './AlojamientosTipo.css';
+import AddTipoDeAlojamiento from '../components/form/AddTipoDeAlojamiento.jsx';
+import GetTiposDeAlojamientos from '../components/form/GetTiposDeAlojamientos.jsx';
+import DeleteTipoDeAlojamiento from '../components/form/DeleteTipoDeAlojamiento.jsx';
+import GetTipoDeAlojamientoById from '../components/form/GetTipoDeAlojamientoById.jsx';
 import EditarTipoDeAlojamiento from '../components/form/EditarTipoDeAlojamiento.jsx';
 
-export default function Alojamientos() {
+export default function AlojamientosTipo() {
     const [refresh, setRefresh] = useState(false);
 
     const handleRefresh = () => {
