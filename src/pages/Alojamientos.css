@@ -1,24 +1,3 @@
-:root {
-    --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
-    --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
-    --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
-    --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
-  }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Usa el color del texto del elemento padre */
-}
-
-a:hover {
-    text-decoration: none; /* También elimina el subrayado en hover */
-}
 
 form, .container-rect-redondeado {
     display:flex;
@@ -27,6 +6,7 @@ form, .container-rect-redondeado {
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+    /* border: 1px red solid; */
 }
 
 .container-rect-redondeado div {
@@ -40,9 +20,9 @@ form, .container-rect-redondeado {
     padding: 20px;
 }
 
-.descripcion-boton label {
+/* .descripcion-boton label {
     display: none;
-}
+} */
 
 button{
     font-size: 1em;

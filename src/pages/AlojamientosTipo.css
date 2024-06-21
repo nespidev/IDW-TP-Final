@@ -40,9 +40,9 @@ form, .container-rect-redondeado {
     padding: 20px;
 }
 
-.descripcion-boton label {
+/* .descripcion-boton label {
     display: none;
-}
+} */
 
 button{
     font-size: 1em;

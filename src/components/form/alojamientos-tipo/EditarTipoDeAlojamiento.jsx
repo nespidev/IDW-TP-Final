@@ -13,7 +13,7 @@ export default function EditarTipoDeAlojamiento({ onEdit }) {
     };
 
     const editarAlojamiento = async (e) => {
-        e.preventDefault(); // Esto previene que la página se recargue
+        e.preventDefault();
         try {
             const response = await fetch(`http://localhost:3001/tiposAlojamiento/putTipoAlojamiento/${alojamientoId}`, {
                 method: 'PUT',
