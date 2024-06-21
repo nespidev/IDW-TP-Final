@@ -23,6 +23,9 @@ form, .container-rect-redondeado {
 /* .descripcion-boton label {
     display: none;
 } */
+.form-group {
+    justify-content: space-between;
+}
 
 button{
     font-size: 1em;

@@ -53,100 +53,110 @@ export default function AddAlojamiento({ onAdd }) {
         <form className="container-rect-redondeado" onSubmit={handleSubmit}>
             <h2>Nuevo tipo de alojamiento</h2>
             <div className='descripcion-boton'>
-                <label htmlFor="titulo"></label>
-                <input
-                    type="text"
-                    id="titulo"
-                    name="titulo"
-                    placeholder='Titulo'
-                    required
-                    value={formData.titulo}
-                    onChange={handleInputChange} />
-                <label htmlFor="descripcion"></label>
-                <input
-                    type="text"
-                    id="descripcion"
-                    name="descripcion"
-                    placeholder='Descripción'
-                    required
-                    value={formData.descripcion}
-                    onChange={handleInputChange} />
-                <label htmlFor="tipo-alojamiento"></label>
-                <input
-                    type="text"
-                    id="idTipoAlojamiento"
-                    name="idTipoAlojamiento"
-                    placeholder='Id de Tipo de Alojamiento'
-                    required
-                    value={formData.idTipoAlojamiento}
-                    onChange={handleInputChange} />
-                <label htmlFor="latitud"></label>
-                <input
-                    type="text"
-                    id="latitud"
-                    name="latitud"
-                    placeholder='Latitud'
-                    required
-                    value={formData.latitud}
-                    onChange={handleInputChange} />
-                <label htmlFor="longitud"></label>
-                <input
-                    type="text"
-                    id="longitud"
-                    name="longitud"
-                    placeholder='Longitud'
-                    required
-                    value={formData.longitud}
-                    onChange={handleInputChange} />
-                <label htmlFor="precio-por-dia"></label>
-                <input
-                    type="number"
-                    id="precioPorDia"
-                    name="precioPorDia"
-                    placeholder='Precio por día'
-                    required
-                    value={formData.precioPorDia}
-                    onChange={handleInputChange} />
-                <label htmlFor="cantidad-dormitorios"></label>
-                <input
-                    type="number"
-                    id="cantidadDormitorios"
-                    name="cantidadDormitorios"
-                    placeholder='Cant. de dormitorios'
-                    required
-                    value={formData.cantidadDormitorios}
-                    onChange={handleInputChange} />
-                <label htmlFor="cantidad-banios"></label>
-                <input
-                    type="number"
-                    id="cantidadBanios"
-                    name="cantidadBanios"
-                    placeholder='Cant. de Baños'
-                    required
-                    value={formData.cantidadBanios}
-                    onChange={handleInputChange} />
-                <label>Estado:</label>
-                <div className="estado-radios">
-                    <label>
-                        <input
-                            type="radio"
-                            name="estado"
-                            value="disponible"
-                            checked={formData.estado === 'disponible'}
-                            onChange={handleInputChange}
-                        />
-                        Disponible
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="estado"
-                            value="reservado"
-                            checked={formData.estado === 'reservado'}
-                            onChange={handleInputChange}
-                        />
-                        Reservado
-                    </label>
+                <div className="form-group">
+                    <label htmlFor="titulo">Título:</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        name="titulo"
+                        required
+                        value={formData.titulo}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="descripcion">Descripción:</label>
+                    <input
+                        type="text"
+                        id="descripcion"
+                        name="descripcion"
+                        required
+                        value={formData.descripcion}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="idTipoAlojamiento">ID de Tipo de Alojamiento:</label>
+                    <input
+                        type="text"
+                        id="idTipoAlojamiento"
+                        name="idTipoAlojamiento"
+                        required
+                        value={formData.idTipoAlojamiento}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="latitud">Latitud:</label>
+                    <input
+                        type="text"
+                        id="latitud"
+                        name="latitud"
+                        required
+                        value={formData.latitud}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="longitud">Longitud:</label>
+                    <input
+                        type="text"
+                        id="longitud"
+                        name="longitud"
+                        required
+                        value={formData.longitud}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="precioPorDia">Precio por día:</label>
+                    <input
+                        type="number"
+                        id="precioPorDia"
+                        name="precioPorDia"
+                        required
+                        value={formData.precioPorDia}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="cantidadDormitorios">Cantidad de Dormitorios:</label>
+                    <input
+                        type="number"
+                        id="cantidadDormitorios"
+                        name="cantidadDormitorios"
+                        required
+                        value={formData.cantidadDormitorios}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="cantidadBanios">Cantidad de Baños:</label>
+                    <input
+                        type="number"
+                        id="cantidadBanios"
+                        name="cantidadBanios"
+                        required
+                        value={formData.cantidadBanios}
+                        onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label>Estado:</label>
+                    <div className="estado-radios">
+                        <label>
+                            <input
+                                type="radio"
+                                name="estado"
+                                value="disponible"
+                                checked={formData.estado === 'disponible'}
+                                onChange={handleInputChange}
+                            />
+                            Disponible
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="estado"
+                                value="reservado"
+                                checked={formData.estado === 'reservado'}
+                                onChange={handleInputChange}
+                            />
+                            Reservado
+                        </label>
+                    </div>
                 </div>
                 <button type="submit">Enviar</button>
             </div>
