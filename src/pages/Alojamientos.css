@@ -9,6 +9,17 @@ form, .container-rect-redondeado {
     /* border: 1px red solid; */
 }
 
+.pagina-alojamientos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
 .container-rect-redondeado div {
     flex-wrap: wrap;
     justify-content: center;

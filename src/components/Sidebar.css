@@ -1,0 +1,19 @@
+.sidebar {
+    width: 20%; /* Ancho del rectángulo */
+  /* Usa el 100% de la altura de la ventana */
+    padding: 40px; /* Espaciado interno */
+    background-color: var(--claro); /* Fondo blanco */
+    /* border: 1px solid #ccc; */
+    border-radius: 90px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    overflow-y: auto;
+}
+
+.sidebar > ul > li {
+    display: block;
+    border: 3px solid red;
+}
