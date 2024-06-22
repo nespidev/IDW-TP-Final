@@ -61,12 +61,14 @@
 /* Estado Radios Styles */
 .estado-radios {
     display: flex;
+    gap: 10px;
+    accent-color: var(--acento);
 }
 
 .estado-radios label {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
 }
 
 
