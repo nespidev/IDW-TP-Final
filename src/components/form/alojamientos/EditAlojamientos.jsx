@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './EditAlojamiento.css';
+import EditFormData from './EditFormData'; // Importa el nuevo componente
 
 export default function EditAlojamiento() {
     const [id, setId] = useState('');
@@ -20,6 +20,8 @@ export default function EditAlojamiento() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        // Reset message when input changes
+        setMessage('');
     };
 
     const handleIdChange = (e) => {
@@ -43,17 +45,25 @@ export default function EditAlojamiento() {
                     estado: data.Estado
                 });
                 setError(null);
+                // Reset message when new data is fetched
+                setMessage('');
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || 'Error al obtener el alojamiento');
                 setFormData({});
+                setMessage('');
             }
         } catch (err) {
             setError('Error al establecer el servicio. Por favor, intente de nuevo.');
             setFormData({});
+            setMessage('');
         }
     };
-    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent form submission
+        await fetchAlojamientoData(id);
+    };
 
     const handleUpdateAlojamiento = async (e) => {
         e.preventDefault();
@@ -90,9 +100,9 @@ export default function EditAlojamiento() {
     };
 
     return (
-        <form className="container-rect-redondeado">
+        <div className="container-rect-redondeado">
             <h2>Editar Alojamiento</h2>
-            <div className='descripcion-boton'>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="id">ID del Alojamiento:</label>
                     <input
@@ -104,131 +114,19 @@ export default function EditAlojamiento() {
                         placeholder="Ingrese ID del alojamiento"
                     />
                 </div>
-                <button type="button" onClick={() => fetchAlojamientoData(id)}>Cargar Datos</button>
-            </div>
+                <button type="submit">Cargar Datos</button>
+            </form>
 
-            <div className='descripcion-boton'>
-                {formData.titulo && (
-                    <>
-                        <div className="form-group">
-                            <label htmlFor="titulo">Título:</label>
-                            <input
-                                type="text"
-                                id="titulo"
-                                name="titulo"
-                                value={formData.titulo}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese el título"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="descripcion">Descripción:</label>
-                            <input
-                                type="text"
-                                id="descripcion"
-                                name="descripcion"
-                                value={formData.descripcion}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese la descripción"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="idTipoAlojamiento">ID de Tipo de Alojamiento:</label>
-                            <input
-                                type="text"
-                                id="idTipoAlojamiento"
-                                name="idTipoAlojamiento"
-                                value={formData.idTipoAlojamiento}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese el ID del tipo de alojamiento"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="latitud">Latitud:</label>
-                            <input
-                                type="text"
-                                id="latitud"
-                                name="latitud"
-                                value={formData.latitud}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese la latitud"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="longitud">Longitud:</label>
-                            <input
-                                type="text"
-                                id="longitud"
-                                name="longitud"
-                                value={formData.longitud}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese la longitud"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="precioPorDia">Precio por día:</label>
-                            <input
-                                type="number"
-                                id="precioPorDia"
-                                name="precioPorDia"
-                                value={formData.precioPorDia}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese el precio por día"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="cantidadDormitorios">Cantidad de Dormitorios:</label>
-                            <input
-                                type="number"
-                                id="cantidadDormitorios"
-                                name="cantidadDormitorios"
-                                value={formData.cantidadDormitorios}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese la cantidad de dormitorios"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="cantidadBanios">Cantidad de Baños:</label>
-                            <input
-                                type="number"
-                                id="cantidadBanios"
-                                name="cantidadBanios"
-                                value={formData.cantidadBanios}
-                                onChange={handleInputChange}
-                                placeholder="Ingrese la cantidad de baños"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Estado:</label>
-                            <div className="estado-radios">
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="estado"
-                                        value="Disponible"
-                                        checked={formData.estado === 'Disponible'}
-                                        onChange={handleInputChange}
-                                    />
-                                    Disponible
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="estado"
-                                        value="Reservado"
-                                        checked={formData.estado === 'Reservado'}
-                                        onChange={handleInputChange}
-                                    />
-                                    Reservado
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" onClick={handleUpdateAlojamiento}>Actualizar</button>
-                    </>
-                )}
-            </div>
+            {Object.values(formData).some(value => value !== '') && (
+                <EditFormData
+                    formData={formData}
+                    handleInputChange={handleInputChange}
+                    handleUpdateAlojamiento={handleUpdateAlojamiento}
+                />
+            )}
+
             {error && <div className="error">{error}</div>}
             {message && <div className="success">{message}</div>}
-        </form>
+        </div>
     );
 }
