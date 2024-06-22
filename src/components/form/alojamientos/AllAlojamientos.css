@@ -1,0 +1,16 @@
+.all-alojamientos {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    text-align: start;
+}
+
+.all-alojamiento-singular {
+    text-align: left;
+    padding-bottom: 40px;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 2em;
+}
