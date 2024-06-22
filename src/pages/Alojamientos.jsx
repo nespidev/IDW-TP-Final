@@ -22,7 +22,7 @@ export default function Alojamientos() {
             <p> </p>
         </section>
 
-        <div class = "pagina-alojamientos">
+        <div className = "pagina-alojamientos">
 
             <Sidebar></Sidebar>
             <AddAlojamiento onAdd={handleRefresh} />
