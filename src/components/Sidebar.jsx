@@ -6,8 +6,10 @@ export default function Navbar() {
         <div className='sidebar'>
             <ul>
                 <li><Link className={location.pathname === '/Alojamientos' ? 'activo' : ''} to="/Alojamientos">Agregar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/2' ? 'activo' : ''} to="/Alojamientos/2">Eliminar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/3' ? 'activo' : ''} to="/Alojamientos/3">Ver</Link></li>
+                <li><Link className={location.pathname === '/Alojamientos/delete' ? 'activo' : ''} to="/Alojamientos/delete">Eliminar</Link></li>
+                <li><Link className={location.pathname === '/Alojamientos/get' ? 'activo' : ''} to="/Alojamientos/get">Buscar</Link></li>
+                <li><Link className={location.pathname === '/Alojamientos/edit' ? 'activo' : ''} to="/Alojamientos/edit">Actualizar</Link></li>
+                <li><Link className={location.pathname === '/Alojamientos/all' ? 'activo' : ''} to="/Alojamientos/all">Todos</Link></li>
             </ul>
     </div>
     );

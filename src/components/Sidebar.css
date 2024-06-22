@@ -1,16 +1,16 @@
+.sidebar {
+    margin-top: 10vh;
+    border-radius: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background-color: var(--claro);
+}
 .sidebar ul {
     width: 100%; /* Ancho del rectángulo */
-    margin-left: 10%;
-    padding: 40px; /* Espaciado interno */
-    background-color: var(--claro); /* Fondo blanco */
-    /* border: 1px solid #ccc; */
-    border-radius: 70px; /* Bordes redondeados */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* gap: 145px; */
-    overflow-y: auto;
     gap: 20px;
     
 }
