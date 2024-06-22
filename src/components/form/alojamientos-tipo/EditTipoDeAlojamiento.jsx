@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function EditarTipoDeAlojamiento({ onEdit }) {
+export default function EditTipoDeAlojamiento({ onEdit }) {
     const [alojamientoId, setAlojamientoId] = useState('');
     const [descripcion, setDescripcion] = useState('');
 

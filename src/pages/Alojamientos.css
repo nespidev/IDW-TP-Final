@@ -30,7 +30,7 @@
 }*/
 
 .pagina-alojamientos .descripcion-boton {
-    gap: 20px;
+    gap: 20px 40px;
     justify-content: space-between;
     padding: 20px;
     flex-wrap: wrap;

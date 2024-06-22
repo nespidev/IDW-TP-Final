@@ -4,7 +4,7 @@ import AddTipoDeAlojamiento from '../components/form/alojamientos-tipo/AddTipoDe
 import GetTiposDeAlojamientos from '../components/form/alojamientos-tipo/GetTiposDeAlojamientos.jsx';
 import DeleteTipoDeAlojamiento from '../components/form/alojamientos-tipo/DeleteTipoDeAlojamiento.jsx';
 import GetTipoDeAlojamientoById from '../components/form/alojamientos-tipo/GetTipoDeAlojamientoById.jsx';
-import EditarTipoDeAlojamiento from '../components/form/alojamientos-tipo/EditarTipoDeAlojamiento.jsx';
+import EditTipoDeAlojamiento from '../components/form/alojamientos-tipo/EditTipoDeAlojamiento.jsx';
 
 export default function AlojamientosTipo() {
     const [refresh, setRefresh] = useState(false);
@@ -20,7 +20,7 @@ export default function AlojamientosTipo() {
                 <p> </p>
             </section>
             <AddTipoDeAlojamiento onAdd={handleRefresh} />
-            <EditarTipoDeAlojamiento onEdit={handleRefresh} />
+            <EditTipoDeAlojamiento onEdit={handleRefresh} />
             <DeleteTipoDeAlojamiento onDelete={handleRefresh} />
             <GetTipoDeAlojamientoById refresh={refresh} />
             <GetTiposDeAlojamientos refresh={refresh} />
