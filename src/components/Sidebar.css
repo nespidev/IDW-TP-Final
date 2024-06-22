@@ -1,6 +1,6 @@
 .sidebar ul {
     width: 100%; /* Ancho del rectángulo */
-    margin-left: 55px;
+    margin-left: 10%;
     padding: 40px; /* Espaciado interno */
     background-color: var(--claro); /* Fondo blanco */
     /* border: 1px solid #ccc; */
@@ -53,7 +53,7 @@
     text-decoration: none;
     border-radius: 10px;
     padding: 10px 15px;
-    width: 80%;
+    width: 100%;
     transition: background-color 0.3s ease;
   }
   
