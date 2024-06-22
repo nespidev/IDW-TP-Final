@@ -1,4 +1,4 @@
-
+/* Alojamientos.css */
 .pagina-alojamientos>form, .pagina-alojamientos>.container-rect-redondeado {
     margin: 0;
     width: 60%;
@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     max-width: 1200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .pagina-alojamientos {
@@ -28,15 +29,11 @@
 
 }*/
 
-.container-rect-redondeado div {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.descripcion-boton {
+.pagina-alojamientos .descripcion-boton {
     gap: 20px;
     justify-content: space-between;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 
@@ -47,6 +44,7 @@
     justify-content: space-between;
     width: 100%;
     max-width: 600px;
+    padding: 10px 0;
 }
 
 .form-group label {
@@ -58,8 +56,6 @@
     flex: 1;
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 /* Estado Radios Styles */

@@ -1,0 +1,8 @@
+/* GetAlojamiento.css */
+.alojamiento-info {
+    justify-content: baseline;
+}
+
+.alojamiento-info p{
+    display: block;
+}

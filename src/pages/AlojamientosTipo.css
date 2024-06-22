@@ -1,24 +1,4 @@
-:root {
-    --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
-    --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
-    --acento: #FFEF9B; /* Define la variable y asigna el valor hexadecimal */
-    --fondo: #F9F8ED; /* Define la variable y asigna el valor hexadecimal */
-  }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Usa el color del texto del elemento padre */
-}
-
-a:hover {
-    text-decoration: none; /* También elimina el subrayado en hover */
-}
+/*AlojamientosTipo.css*/
 
 form, .container-rect-redondeado {
     display:flex;
@@ -29,15 +9,13 @@ form, .container-rect-redondeado {
     flex-wrap: wrap;
 }
 
-.container-rect-redondeado div {
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.descripcion-boton {
-    gap: 20px;
+.pagina-alojamientos-tipo .descripcion-boton {
+    display: flex;
+    gap: 10px;
     justify-content: space-between;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 /* .descripcion-boton label {

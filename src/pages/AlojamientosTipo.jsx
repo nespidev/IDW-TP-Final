@@ -14,7 +14,7 @@ export default function AlojamientosTipo() {
     };
 
     return (
-        <>
+        <div className='pagina-alojamientos-tipo'>
             <section className="intro">
                 <h1>Administrar tipos de alojamientos</h1>
                 <p> </p>
@@ -24,6 +24,6 @@ export default function AlojamientosTipo() {
             <DeleteTipoDeAlojamiento onDelete={handleRefresh} />
             <GetTipoDeAlojamientoById refresh={refresh} />
             <GetTiposDeAlojamientos refresh={refresh} />
-        </>
+        </ div>
     );
 }

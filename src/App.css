@@ -1,3 +1,4 @@
+/* App.css*/
 :root {
   --oscuro: #027373; /* Define la variable y asigna el valor hexadecimal */
   --claro: #A2E8D6; /* Define la variable y asigna el valor hexadecimal */
@@ -329,16 +330,16 @@ footer {
   align-items: center;
 }
 
-.container-rect-redondeado .titulo {
+.pagina-contacto .container-rect-redondeado .titulo {
   text-align: center;
 }
 
-.container-rect-redondeado div {
+.pagina-contacto .container-rect-redondeado div {
   display: flex;
   align-items: center;
 }
 
-.container-rect-redondeado img {
+.pagina-institucional .container-rect-redondeado img {
 
   padding-right: 30px;
   height: 100px;
