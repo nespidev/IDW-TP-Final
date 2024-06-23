@@ -70,3 +70,10 @@
     border-radius: 10px;
     color: #000;
   }
+
+.sidebar .linea-h {
+  background-color: var(--oscuro);
+  width: 100%;
+  color: var(--oscuro);
+  height: 3px;
+}

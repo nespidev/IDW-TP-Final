@@ -8,6 +8,7 @@ import GetAlojamiento from '../components/form/alojamientos/GetAlojamiento.jsx';
 import DeleteAlojamiento from '../components/form/alojamientos/DeleteAlojamiento.jsx';
 import EditAlojamiento from '../components/form/alojamientos/EditAlojamientos.jsx';
 import AllAlojamientos from '../components/form/alojamientos/AllAlojamientos.jsx';
+import AlojamientosTipo from '../components/form/alojamientos-tipo/AlojamientosTipo.jsx';
 
 
 export default function Alojamientos() {
@@ -33,6 +34,7 @@ export default function Alojamientos() {
                 <Route path='delete' element={<DeleteAlojamiento />}></Route>
                 <Route path='edit' element={<EditAlojamiento />}></Route>
                 <Route path='all' element={<AllAlojamientos />}></Route>
+                <Route path='tipos' element={<AlojamientosTipo />}></Route>
                 
             </Routes>
         </div>

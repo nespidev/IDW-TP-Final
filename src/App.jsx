@@ -3,7 +3,6 @@ import './App.css'
 import Home from './pages/Home.jsx'
 import Institucional from './pages/Institucional.jsx'
 import Contacto from './pages/Contacto.jsx'
-import AlojamientosTipo from './pages/AlojamientosTipo.jsx'
 import Alojamientos from './pages/Alojamientos.jsx'
 
 import Navbar from './components/Navbar.jsx'
@@ -21,7 +20,6 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/Contacto" element={<Contacto />}></Route>
         <Route path="/Institucional" element={<Institucional />}></Route>
-        <Route path="/AlojamientosTipo" element={<AlojamientosTipo />}></Route>
         <Route path="/Alojamientos/*" element={<Alojamientos />}></Route>
       </Routes>
 

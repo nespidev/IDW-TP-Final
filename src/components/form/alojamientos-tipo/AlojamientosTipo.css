@@ -7,6 +7,7 @@ form, .container-rect-redondeado {
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+    width: 100%
 }
 
 
