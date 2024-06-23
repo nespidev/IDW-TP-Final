@@ -42,7 +42,6 @@ export default function DeleteAlojamiento() {
                         name="id"
                         value={id}
                         onChange={handleInputChange}
-                        placeholder="Ingrese ID del alojamiento"
                     />
                 </div>
                 <button onClick={handleDeleteAlojamiento}>Eliminar</button>

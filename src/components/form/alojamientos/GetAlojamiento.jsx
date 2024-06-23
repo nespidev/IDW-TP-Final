@@ -41,23 +41,22 @@ export default function GetAlojamiento() {
                         name="id"
                         value={id}
                         onChange={handleInputChange}
-                        placeholder="Ingrese ID del alojamiento"
                     />
                 </div>
                 <button onClick={handleFetchAlojamiento}>Buscar</button>
             </div>
             {error && <div className="error">{error}</div>}
             {alojamiento && (
-                <div className="alojamiento-info">
-                    <h3>{alojamiento.Titulo}</h3>
-                    <p><strong>Descripción:</strong> {alojamiento.Descripción}</p>
-                    <p><strong>Tipo de Alojamiento:</strong> {alojamiento.TipoAlojamiento}</p>
-                    <p><strong>Latitud:</strong> {alojamiento.Latitud}</p>
-                    <p><strong>Longitud:</strong> {alojamiento.Longitud}</p>
-                    <p><strong>Precio por Día:</strong> ${alojamiento.PrecioPorDia}</p>
-                    <p><strong>Cantidad de Dormitorios:</strong> {alojamiento.CantidadDormitorios}</p>
-                    <p><strong>Cantidad de Baños:</strong> {alojamiento.CantidadBanios}</p>
-                    <p><strong>Estado:</strong> {alojamiento.Estado}</p>
+                <div className="alojamiento-singular">
+                       <strong>ID:</strong> {alojamiento.idAlojamiento} <br />
+                        <strong>Título:</strong> {alojamiento.Titulo} <br />
+                        <strong>Descripción:</strong> {alojamiento.Descripcion} <br />
+                        <strong>ID de Tipo de Alojamiento:</strong> {alojamiento.idTipoAlojamiento} <br />
+                        <strong>Ubicación:</strong><br /><span className='tab'></span> Latitud: {alojamiento.Latitud}, <br /> <span className='tab'></span>Longitud: {alojamiento.Longitud} <br />
+                        <strong>Precio por Día:</strong> ${alojamiento.PrecioPorDia} <br />
+                        <strong>Cantidad de Dormitorios:</strong> {alojamiento.CantidadDormitorios} <br />
+                        <strong>Cantidad de Baños:</strong> {alojamiento.CantidadBanios} <br />
+                        <strong>Estado:</strong> {alojamiento.Estado} <br />
                 </div>
             )}
         </form>

@@ -111,7 +111,6 @@ export default function EditAlojamiento() {
                         name="id"
                         value={id}
                         onChange={handleIdChange}
-                        placeholder="Ingrese ID del alojamiento"
                     />
                 </div>
                 <button type="submit">Cargar Datos</button>

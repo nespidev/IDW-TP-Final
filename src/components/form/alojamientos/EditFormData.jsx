@@ -11,7 +11,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="titulo"
                     value={formData.titulo}
                     onChange={handleInputChange}
-                    placeholder="Ingrese el título"
                 />
             </div>
             <div className="form-group">
@@ -22,7 +21,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="descripcion"
                     value={formData.descripcion}
                     onChange={handleInputChange}
-                    placeholder="Ingrese la descripción"
                 />
             </div>
             <div className="form-group">
@@ -33,7 +31,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="idTipoAlojamiento"
                     value={formData.idTipoAlojamiento}
                     onChange={handleInputChange}
-                    placeholder="Ingrese el ID del tipo de alojamiento"
                 />
             </div>
             <div className="form-group">
@@ -44,7 +41,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="latitud"
                     value={formData.latitud}
                     onChange={handleInputChange}
-                    placeholder="Ingrese la latitud"
                 />
             </div>
             <div className="form-group">
@@ -55,7 +51,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="longitud"
                     value={formData.longitud}
                     onChange={handleInputChange}
-                    placeholder="Ingrese la longitud"
                 />
             </div>
             <div className="form-group">
@@ -66,7 +61,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="precioPorDia"
                     value={formData.precioPorDia}
                     onChange={handleInputChange}
-                    placeholder="Ingrese el precio por día"
                 />
             </div>
             <div className="form-group">
@@ -77,7 +71,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="cantidadDormitorios"
                     value={formData.cantidadDormitorios}
                     onChange={handleInputChange}
-                    placeholder="Ingrese la cantidad de dormitorios"
                 />
             </div>
             <div className="form-group">
@@ -88,7 +81,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     name="cantidadBanios"
                     value={formData.cantidadBanios}
                     onChange={handleInputChange}
-                    placeholder="Ingrese la cantidad de baños"
                 />
             </div>
             <div className="form-group">
