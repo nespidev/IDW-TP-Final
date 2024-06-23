@@ -51,7 +51,7 @@ export default function AddAlojamiento({ onAdd }) {
 
     return (
         <form className="container-rect-redondeado" onSubmit={handleSubmit}>
-            <h2>Nuevo tipo de alojamiento</h2>
+            <h2>Nuevo alojamiento</h2>
             <div className='descripcion-boton'>
                 <div className="form-group">
                     <label htmlFor="titulo">Título:</label>
