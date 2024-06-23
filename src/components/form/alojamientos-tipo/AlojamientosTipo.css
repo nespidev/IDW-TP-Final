@@ -11,7 +11,7 @@ form, .container-rect-redondeado {
 }
 
 
-.pagina-alojamientos-tipo .descripcion-boton {
+.pagina-alojamientos-seccion .descripcion-boton {
     display: flex;
     gap: 10px;
     justify-content: space-between;
@@ -19,9 +19,6 @@ form, .container-rect-redondeado {
     flex-wrap: wrap;
 }
 
-/* .descripcion-boton label {
-    display: none;
-} */
 
 button{
     font-size: 1em;

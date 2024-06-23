@@ -28,13 +28,15 @@ export default function AllAlojamientos() {
     }, []);
 
     return (
-        <div className="all-alojamientos container-rect-redondeado">
-            <h2>Listado de Alojamientos</h2>
+        <div className="container-rect-redondeado">
+            <div className='descripcion-boton'>
+                <h2>Listado de Alojamientos</h2>
+            </div>
             <button onClick={fetchAlojamientos}>Actualizar</button>
             {error && <div className="error">{error}</div>}
-            <div className='all-alojamientos-lista'>
+            <div className='contenedor-listado'>
                 {alojamientos.map((alojamiento) => (
-                    <div key={alojamiento.idAlojamiento} className='alojamiento-singular'>
+                    <div key={alojamiento.idAlojamiento} className='listado-alineado'>
                         <strong>ID:</strong> {alojamiento.idAlojamiento} <br />
                         <strong>Título:</strong> {alojamiento.Titulo} <br />
                         <strong>Descripción:</strong> {alojamiento.Descripcion} <br />

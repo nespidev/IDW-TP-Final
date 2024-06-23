@@ -47,7 +47,7 @@ export default function GetAlojamiento() {
             </div>
             {error && <div className="error">{error}</div>}
             {alojamiento && (
-                <div className="alojamiento-singular">
+                <div className="listado-alineado">
                        <strong>ID:</strong> {alojamiento.idAlojamiento} <br />
                         <strong>Título:</strong> {alojamiento.Titulo} <br />
                         <strong>Descripción:</strong> {alojamiento.Descripcion} <br />

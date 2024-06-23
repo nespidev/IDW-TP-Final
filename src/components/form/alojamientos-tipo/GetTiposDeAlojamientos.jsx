@@ -26,7 +26,7 @@ export default function GetTiposAlojamientos({ refresh }) {
 
     return (
         <div className='container-rect-redondeado get-tipos-de-alojamientos'>
-            <div className="container-titulo-get">
+            <div className="descripcion-boton">
                 <h2>Tipos de alojamientos</h2>
                 <button onClick={getAlojamientos}>Actualizar</button>
             </div>

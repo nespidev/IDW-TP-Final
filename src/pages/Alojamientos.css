@@ -146,7 +146,50 @@ input:focus, input:hover{
     width: 50px;
 }
 
-.alojamiento-singular {
+.tab {
+    display: inline-block;
+    margin-left: 2em;
+}
+
+.contenedor-listado {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.listado-alineado {
+    flex: 0 1 calc(50% - 20px); /* Dos columnas con gap de 20px */
     text-align: left;
-    padding-bottom: 40px;
+    padding-top: 40px;
+    box-sizing: border-box; /* Ajusta el tamaño incluyendo el padding */
+}
+
+/* Pseudo-elemento para añadir elemento vacío */
+.contenedor-listado::after {
+    content: '';
+    flex: 0 1 calc(50% - 20px); /* Mismo ancho que las columnas */
+    padding-top: 40px; /* Igualar el padding-top de los listados */
+    box-sizing: border-box;
+    visibility: hidden; /* Ocultar el pseudo-elemento por defecto */
+}
+
+/* Mostrar el pseudo-elemento solo si hay un número impar de listados */
+.contenedor-listado:nth-last-child(1):only-child,
+.contenedor-listado:nth-last-child(2):only-child .listado-alineado {
+    display: flex;
+}
+
+
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+    text-align: center;
 }

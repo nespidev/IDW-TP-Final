@@ -14,7 +14,7 @@ export default function AlojamientosTipo() {
     };
 
     return (
-        <div className='pagina-alojamientos-tipo'>
+        <div className='pagina-alojamientos-seccion'>
             <AddTipoDeAlojamiento onAdd={handleRefresh} />
             <EditTipoDeAlojamiento onEdit={handleRefresh} />
             <DeleteTipoDeAlojamiento onDelete={handleRefresh} />
