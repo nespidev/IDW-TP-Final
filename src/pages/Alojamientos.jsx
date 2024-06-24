@@ -10,6 +10,7 @@ import EditAlojamiento from '../components/form/alojamientos/EditAlojamientos.js
 import AllAlojamientos from '../components/form/alojamientos/AllAlojamientos.jsx';
 import AlojamientosTipo from '../components/form/alojamientos-tipo/AlojamientosTipo.jsx';
 import Servicios from '../components/form/servicios/Servicios.jsx';
+import Test from './Test.jsx';
 
 
 export default function Alojamientos() {
@@ -37,6 +38,7 @@ export default function Alojamientos() {
                 <Route path='all' element={<AllAlojamientos />}></Route>
                 <Route path='tipos' element={<AlojamientosTipo />}></Route>
                 <Route path='servicios' element={<Servicios />}></Route>
+                <Route path='test' element={<Test />}></Route>
                 
             </Routes>
         </div>

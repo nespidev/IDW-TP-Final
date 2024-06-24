@@ -1,0 +1,33 @@
+.data-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 2px solid var(--oscuro);
+    border-radius: 10px;
+    /*overflow: hidden; Asegura que los bordes redondeados se apliquen correctamente */
+    font-size: 0.9rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: var(--oscuro);
+    text-align: left;
+    color: #fff;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: var(--fondo);
+}
+
+.data-table tr:hover {
+    background-color: var(--acento);
+}

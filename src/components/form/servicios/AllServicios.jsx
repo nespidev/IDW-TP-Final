@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import DataTable from '../../DataTable.jsx';
 // import './AllServicios.css';
 
 export default function AllServicios() {
@@ -25,6 +26,11 @@ export default function AllServicios() {
         fetchServicios();
     }, []);
 
+    const columns = [
+        { header: 'ID', accessor: 'idServicio' },
+        { header: 'Nombre', accessor: 'Nombre' },
+    ];
+
     return (
         <div className="container-rect-redondeado">
             <h2>Listado de Servicios</h2>
@@ -32,15 +38,7 @@ export default function AllServicios() {
                 <button onClick={fetchServicios}>Actualizar</button>
             </div>
             {error && <div className="error">{error}</div>}
-            <div className='contenedor-listado'>
-                {servicios.map((servicio) => (
-                    <div key={servicio.idServicio} className='listado-alineado'>
-                        <strong>ID:</strong> {servicio.idServicio} <br />
-                        <strong>Nombre:</strong> {servicio.Nombre} <br />
-                        <hr />
-                    </div>
-                ))}
-            </div>
+            <DataTable columns={columns} data={servicios} />
         </div>
     );
 }

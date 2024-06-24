@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DataTable from '../../DataTable.jsx';
 
 export default function GetTiposAlojamientos({ refresh }) {
     const [alojamientos, setAlojamientos] = useState([]);
@@ -24,6 +25,11 @@ export default function GetTiposAlojamientos({ refresh }) {
         getAlojamientos();
     }, [refresh]);
 
+    const columns = [
+        { header: 'ID', accessor: 'idTipoAlojamiento' },
+        { header: 'Descripción', accessor: 'Descripcion' }
+    ];
+
     return (
         <div className='container-rect-redondeado get-tipos-de-alojamientos'>
             <div className="descripcion-boton">
@@ -31,16 +37,7 @@ export default function GetTiposAlojamientos({ refresh }) {
                 <button onClick={getAlojamientos}>Actualizar</button>
             </div>
             {alojamientos.length > 0 ? (
-                <ul>
-                    <div className='container-alojamientos'>
-                        {alojamientos.map(alojamiento => (
-                            <li className='lista-alojamientos' key={alojamiento.idTipoAlojamiento}>
-                                <p>ID: </p><span>{alojamiento.idTipoAlojamiento}</span>
-                                <p>Descripción: </p><span>{alojamiento.Descripcion}</span>
-                            </li>
-                        ))}
-                    </div>
-                </ul>
+                <DataTable columns={columns} data={alojamientos} />
             ) : (
                 <p className='sin-alojamientos'>No hay tipos de alojamientos disponibles.</p>
             )}
