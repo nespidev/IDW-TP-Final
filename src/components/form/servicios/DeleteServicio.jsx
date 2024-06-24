@@ -42,7 +42,7 @@ export default function DeleteServicio() {
                     name="id"
                     value={id}
                     onChange={handleInputChange}
-                    placeholder="Ingrese el ID del servicio a eliminar"
+                    placeholder="Ingrese ID de servicio a eliminar"
                     required
                 />
                 <button type="submit">Eliminar Servicio</button>
