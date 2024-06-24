@@ -15,7 +15,6 @@ export default function AddAlojamiento({ onAdd }) {
     const [servicios, setServicios] = useState([]);
     const [selectedServicios, setSelectedServicios] = useState([]);
 
-    // Fetch servicios when component mounts
     useEffect(() => {
         const fetchServicios = async () => {
             try {
@@ -68,7 +67,7 @@ export default function AddAlojamiento({ onAdd }) {
                 const idAlojamiento = alojamientoData.id;
                 console.log('ID del Alojamiento:', idAlojamiento);
 
-                // Associate services with the new alojamiento
+                // Asociar servicios con nuevo alojamiento
                 for (const idServicio of selectedServicios) {
                     await fetch('http://localhost:3001/alojamientosServicios/createAlojamientoServicio', {
                         method: 'POST',

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import EditFormData from './EditFormData'; // Importa el nuevo componente
+import EditFormData from './EditFormData';
 
 export default function EditAlojamiento() {
     const [id, setId] = useState('');
     const [formData, setFormData] = useState({
+        idAlojamiento: '',
         titulo: '',
         descripcion: '',
         idTipoAlojamiento: '',
@@ -20,7 +21,6 @@ export default function EditAlojamiento() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        // Reset message when input changes
         setMessage('');
     };
 
@@ -34,6 +34,7 @@ export default function EditAlojamiento() {
             if (response.ok) {
                 const data = await response.json();
                 setFormData({
+                    idAlojamiento: data.idAlojamiento,
                     titulo: data.Titulo,
                     descripcion: data.Descripcion,
                     idTipoAlojamiento: data.idTipoAlojamiento,
@@ -45,7 +46,6 @@ export default function EditAlojamiento() {
                     estado: data.Estado
                 });
                 setError(null);
-                // Reset message when new data is fetched
                 setMessage('');
             } else {
                 const errorData = await response.json();
@@ -61,12 +61,14 @@ export default function EditAlojamiento() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault();
+        console.log('corriendo handleSubmit en EditAlojamiento')
         await fetchAlojamientoData(id);
     };
 
     const handleUpdateAlojamiento = async (e) => {
         e.preventDefault();
+        console.log('corriendo handleUpdateAlojamiento en EditAlojamiento')
         try {
             const response = await fetch(`http://localhost:3001/alojamiento/putAlojamiento/${id}`, {
                 method: 'PUT',
