@@ -11,15 +11,6 @@ form, .container-rect-redondeado {
 }
 
 
-.pagina-alojamientos-seccion .descripcion-boton {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-
 button{
     font-size: 1em;
     font-weight: 600;

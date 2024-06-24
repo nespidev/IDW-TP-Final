@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function AddAlojamiento({ onAdd }) {
     const [formData, setFormData] = useState({
@@ -12,10 +12,41 @@ export default function AddAlojamiento({ onAdd }) {
         cantidadBanios: '',
         estado: 'disponible'
     });
+    const [servicios, setServicios] = useState([]);
+    const [selectedServicios, setSelectedServicios] = useState([]);
+
+    // Fetch servicios when component mounts
+    useEffect(() => {
+        const fetchServicios = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/servicio/getAllServicios');
+                if (response.ok) {
+                    const data = await response.json();
+                    setServicios(data);
+                } else {
+                    console.error('Error al obtener los servicios');
+                    alert('Error al obtener los servicios');
+                }
+            } catch (error) {
+                console.error('Error: ', error);
+                alert('Error al establecer el servicio. Por favor, intente de nuevo.');
+            }
+        };
+        fetchServicios();
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+    };
+
+    const handleCheckboxChange = (e) => {
+        const { value, checked } = e.target;
+        setSelectedServicios((prevSelectedServicios) =>
+            checked
+                ? [...prevSelectedServicios, value]
+                : prevSelectedServicios.filter((id) => id !== value)
+        );
     };
 
     const handleSubmit = async (e) => {
@@ -36,6 +67,20 @@ export default function AddAlojamiento({ onAdd }) {
 
                 const idAlojamiento = alojamientoData.id;
                 console.log('ID del Alojamiento:', idAlojamiento);
+
+                // Associate services with the new alojamiento
+                for (const idServicio of selectedServicios) {
+                    await fetch('http://localhost:3001/alojamientosServicios/createAlojamientoServicio', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            idAlojamiento,
+                            idServicio: parseInt(idServicio, 10)
+                        })
+                    });
+                }
 
                 alert('Alojamiento agregado con éxito.');
             } else {
@@ -156,6 +201,23 @@ export default function AddAlojamiento({ onAdd }) {
                             />
                             Reservado
                         </label>
+                    </div>
+                </div>
+                <div className="form-group-servicios">
+                    <label>Servicios:</label>
+                    <div className='list-checkboxes'>
+                        {servicios.map(servicio => (
+                            <div key={servicio.idServicio} className='servicio-checkbox'>
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        value={servicio.idServicio}
+                                        onChange={handleCheckboxChange}
+                                    />
+                                    {servicio.Nombre}
+                                </label>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <button type="submit">Enviar</button>

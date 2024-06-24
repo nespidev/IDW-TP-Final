@@ -35,26 +35,33 @@
     flex-wrap: wrap;
 }
 
+.pagina-alojamientos-seccion .descripcion-boton {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
 
 /* Form Group Styles */
 .form-group {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-around;
     width: 100%;
     max-width: 600px;
     padding: 10px 0;
 }
 
-.form-group label {
-    flex: 0 0 150px; /* Width of the labels */
+.form-group label, .form-group-servicios label {
+    flex: 0 0 150px;
     text-align: left;
 }
 
-.form-group input {
+.form-group input, .list-checkboxes, .estado-radios {
     flex: 1;
     padding: 10px;
-    font-size: 1rem;
 }
 
 /* Estado Radios Styles */
@@ -62,13 +69,17 @@
     display: flex;
     gap: 10px;
     accent-color: var(--acento);
-    justify-content: right;
 }
 
 .estado-radios label {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 10px;
+}
+
+.estado-radios input {
+    flex: none;
+    transform: scale(1.5);
 }
 
 
@@ -192,4 +203,32 @@ input:focus, input:hover{
     color: green;
     margin-top: 10px;
     text-align: center;
+}
+
+
+.form-group-servicios {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:space-between;
+    padding: 10px 0;
+}
+
+.list-checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.servicio-checkbox label{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.servicio-checkbox input {
+    transform: scale(1.5);
+    accent-color: var(--acento);
 }
