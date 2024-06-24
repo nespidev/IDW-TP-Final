@@ -67,14 +67,7 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
         e.preventDefault();
 
         try {
-            // Actualizar el alojamiento
-            // await fetch(`http://localhost:3001/alojamiento/updateAlojamiento/${formData.idAlojamiento}`, {
-            //     method: 'PUT',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(formData)
-            // });
+            handleUpdateAlojamiento(e)
 
             console.log('corriendo handleSubmit en EditFormData')
             // Eliminar servicios desmarcados
