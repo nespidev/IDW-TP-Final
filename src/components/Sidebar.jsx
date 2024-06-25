@@ -1,9 +1,21 @@
-import { Link, useLocation } from 'react-router-dom'
-import './Sidebar.css'
-export default function Navbar() {
-    const location = useLocation()
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './Sidebar.css';
+
+export default function Sidebar() {
+    const location = useLocation();
+    const [isVisible, setIsVisible] = useState(true);
+
+    const toggleSidebar = () => {
+        setIsVisible(!isVisible);
+    };
+
     return (
-        <div className='sidebar'>
+
+        <div className={`sidebar ${isVisible ? '' : 'hidden'}`}>
+            <button onClick={toggleSidebar} className={`toggle-button ${isVisible ? '' : 'hidden'}`}>
+                {isVisible ? '<' : '>'}
+            </button>
             <ul>
                 <li><Link className={location.pathname === '/Alojamientos' ? 'activo' : ''} to="/Alojamientos">Agregar</Link></li>
                 <li><Link className={location.pathname === '/Alojamientos/delete' ? 'activo' : ''} to="/Alojamientos/delete">Eliminar</Link></li>
@@ -15,6 +27,13 @@ export default function Navbar() {
                 <li><Link className={location.pathname === '/Alojamientos/servicios' ? 'activo' : ''} to="/Alojamientos/servicios">Servicios</Link></li>
                 <li><Link className={location.pathname === '/Alojamientos/imagenes' ? 'activo' : ''} to="/Alojamientos/imagenes">Imágenes</Link></li>
             </ul>
-    </div>
+            {!isVisible && (
+            <button onClick={toggleSidebar} className="toggle-button hidden">
+                {isVisible ? '<' : '>'}
+            </button>
+        )}
+        </div>
+
+
     );
 }

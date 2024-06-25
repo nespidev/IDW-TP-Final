@@ -1,75 +1,86 @@
-/*Sidebar.css*/
-.sidebar {
-    margin-top: 10vh;
-    border-radius: 70px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    background-color: var(--claro);
-}
-.sidebar ul {
-    width: 100%; /* Ancho del rectángulo */
+/* Sidebar.css */
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    
+    align-items: flex-start; /* Alinea el sidebar al principio */
+    position: relative; /* Necesario para el contenedor del sidebar */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+.sidebar {
+  width: 250px; /* Ajusta el ancho según sea necesario */
+  height: 90vh; /* Sidebar toma el 90% de la altura de la pantalla */
+  margin: 5vh 0; /* Añade márgenes superior e inferior */
+  border-radius: 0 70px 70px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: var(--claro);
+  position: sticky;
+  top: 5vh; /* Espacio desde la parte superior */
+  transition: transform 0.3s ease; /* Para animar la aparición y desaparición */
+}
+
+.sidebar.hidden {
+  transform: translateX(-90%); /* Mueve el sidebar fuera de la vista */
+}
+
+.toggle-button {
+  position: absolute;
+  top: 50%; /* Centra verticalmente el botón */
+  left: 90%; /* Mueve el botón fuera del sidebar */
+  transform: translateY(-50%);
+  border: 3px solid var(--oscuro);
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  transform: scale(75%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button.hidden {
+  left: 10; /* Coloca el botón al borde de la ventana cuando el sidebar está oculto */
+}
+
+.sidebar ul {
+  width: 100%; /* Ancho del rectángulo */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
 
 .sidebar ul li {
-    list-style: none;
-    font-size: 18pt;
-    font-weight: 600;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    width: 100%;
+  list-style: none;
+  font-size: 18pt;
+  font-weight: 600;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+  
+.sidebar ul li a {
+  display: inline-block;
+  color: var(--oscuro);
+  outline: 2px solid var(--oscuro);
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
+.sidebar ul li a:hover {
+  background-color: var(--oscuro);
+  border-radius: 10px;
+  color: var(--claro);
+}
 
-/* nav {
-    background-color: var(--oscuro);
-    font-weight: 700;
-    padding: 10px 0;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  } */
-  
-  /* nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  nav ul li:last-child {
-    margin-right: 0;
-  } */
-  
-  .sidebar ul li a {
-    display: inline-block;
-    color: var(--oscuro);
-    outline: 2px solid var(--oscuro);
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar ul li a:hover {
-    background-color: var(--oscuro);
-    border-radius: 10px;
-    color: var(--claro);
-  }
-  
-  .sidebar ul li a.activo {
-    outline: 2px solid white;
-    background-color: var(--acento);
-    border-radius: 10px;
-    color: #000;
-  }
+.sidebar ul li a.activo {
+  outline: 2px solid white;
+  background-color: var(--acento);
+  border-radius: 10px;
+  color: #000;
+}
 
 .sidebar .linea-h {
   background-color: var(--oscuro);
