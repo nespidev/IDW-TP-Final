@@ -1,11 +1,4 @@
 /* Sidebar.css */
-.container {
-    display: flex;
-    align-items: flex-start; /* Alinea el sidebar al principio */
-    position: relative; /* Necesario para el contenedor del sidebar */
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
-}
-
 .sidebar {
   width: 250px; /* Ajusta el ancho según sea necesario */
   height: 90vh; /* Sidebar toma el 90% de la altura de la pantalla */
