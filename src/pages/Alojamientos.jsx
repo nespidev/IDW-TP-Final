@@ -9,7 +9,7 @@ import DeleteAlojamiento from '../components/form/alojamientos/DeleteAlojamiento
 import EditAlojamiento from '../components/form/alojamientos/EditAlojamientos.jsx';
 import AllAlojamientos from '../components/form/alojamientos/AllAlojamientos.jsx';
 import AlojamientosTipo from '../components/form/alojamientos-tipo/AlojamientosTipo.jsx';
-import Servicios from '../components/form/servicios/Servicios.jsx';
+import Servicios from '../components/form/alojamientos-servicios/Servicios.jsx';
 
 
 export default function Alojamientos() {
