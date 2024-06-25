@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header>
             <div className="logo">
-                <Link to="/"><img src="../img/logo/logo.png" alt="Voy.com"/></Link>
+                <Link to="/"><img src="src/assets/img/logo/logo.png" alt="Voy.com"/></Link>
             </div>
         </header>
     );
