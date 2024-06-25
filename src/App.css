@@ -376,23 +376,22 @@ footer {
   display: inline-block; /* Ajusta el tamaño del contenedor al tamaño del contenido */
   position: relative;
   padding: 10px;
-  border-color: var(--oscuro);
+  border: 5px solid var(--oscuro);
   
 }
 
-.pagina-contacto .redes-sociales img {
-  max-width: 100%;
-  height: 100px;
-  margin: 5px;
-  padding: 0;
-  background-color: transparent; /* Color de fondo inicial */
-  border-radius: 20px;
-  transition: background-color 0.3s ease; /* Agrega una transición suave */
+.pagina-contacto .redes-sociales svg {
+  display: block;
+  width: 100px;
+  height: auto;
+  transition: color 0.3s ease;
+  color: var(--oscuro);
 }
 
-.pagina-contacto .redes-sociales img:hover {
-  background-color: var(--oscuro);
+.pagina-contacto .redes-sociales svg:hover {
+  color: var(--acento);
 }
+
 
 .container-institucional > section {
   display: flex;
