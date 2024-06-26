@@ -401,3 +401,31 @@ footer {
   flex-wrap: nowrap;
   align-items: center;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-button {
+  margin: auto 10px;
+  cursor: pointer;
+  color: white;
+  border-color: white;
+
+}
+
+.admin-button {
+  margin: auto 10px;
+  cursor: pointer;
+  color: white;
+  border-color: white;
+  transition-property: border, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+/* 
+.admin-button:hover {
+  color: var(--acento);
+  border: 3px solid var(--acento);
+} */

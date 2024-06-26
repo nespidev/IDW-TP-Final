@@ -6,6 +6,7 @@ export default function Header() {
             <div className="logo">
                 <Link to="/"><img src="src/assets/idwcheckin.svg" alt="Voy.com"/></Link>
             </div>
+            <button className="admin-button">Admin</button>
         </header>
     );
 }
