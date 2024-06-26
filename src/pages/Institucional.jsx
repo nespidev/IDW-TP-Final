@@ -15,7 +15,7 @@ export default function Institucional() {
                     </section>
                     <section>
                     <img src="src/assets/img/iconos-quienes-somos/busqueda.png"/>
-                    <p><strong>Voy.com</strong> es una plataforma online líder en la búsqueda y comparación de hoteles, dedicada a ofrecer a los viajeros la mejor experiencia posible al reservar su alojamiento.</p>
+                    <p><strong>IDW - Check in</strong> es una plataforma online líder en la búsqueda y comparación de hoteles, dedicada a ofrecer a los viajeros la mejor experiencia posible al reservar su alojamiento.</p>
                     </section>
                     <section>
                         <img src="src/assets/img/iconos-quienes-somos/mision.png"/>
