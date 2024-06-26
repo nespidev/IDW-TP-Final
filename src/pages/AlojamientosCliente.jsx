@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import CardAlojamiento from '../components/CardAlojamiento.jsx'
 const fetchAlojamientos = async () => {
     const response = await fetch('http://localhost:3001/alojamiento/getAlojamientos');
     if (response.ok) {
@@ -102,15 +102,9 @@ export default function AlojamientosCliente() {
     }
 
     return (
-        <div>
+        <div className='container habitaciones'>
             {alojamientos.map((alojamiento) => (
-                <div key={alojamiento.idAlojamiento}>
-                    <p>{`ID: ${alojamiento.idAlojamiento}, Título: ${alojamiento.Titulo}, Descripción: ${alojamiento.Descripcion}, 
-                    Tipo: ${alojamiento.tipoDescripcion}, Latitud: ${alojamiento.Latitud}, Longitud: ${alojamiento.Longitud}, 
-                    Precio por día: ${alojamiento.PrecioPorDia}, Dormitorios: ${alojamiento.CantidadDormitorios}, 
-                    Baños: ${alojamiento.CantidadBanios}, Estado: ${alojamiento.Estado}, Imagen: ${alojamiento.rutaImagen}`}</p>
-                    <p>Servicios: {alojamiento.servicios.join(', ')}</p>
-                </div>
+                <CardAlojamiento key={alojamiento.idAlojamiento} alojamiento={alojamiento} />
             ))}
         </div>
     );

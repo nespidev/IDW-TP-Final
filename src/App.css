@@ -238,6 +238,7 @@ section.intro {
   border-radius: 90px;
 }
 
+/* .habitacion .img-cuadrada { */
 .habitacion .img-cuadrada {
   float: left; /* Coloca la imagen a la izquierda */
   margin-right: 40px; /* Agrega un margen a la derecha para separar la imagen del texto */
