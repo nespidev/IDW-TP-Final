@@ -11,7 +11,6 @@ export default function DeleteImagen() {
         setError(null);
     };
 
-    //SIEMPRE TIENE EXITO, ARREGLAR. A lo mejor el api no tiene error
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -22,7 +21,7 @@ export default function DeleteImagen() {
             if (response.ok) {
                 setMessage(`Imagen con ID ${imagenId} eliminada con éxito.`);
                 setError(null);
-                setImagenId('');
+                setImagenId(''); // Limpiar el input
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || 'Error al eliminar la imagen');
@@ -42,7 +41,7 @@ export default function DeleteImagen() {
                     name="imagenId" 
                     value={imagenId} 
                     onChange={handleInputChange}
-                    placeholder="Ingrese ID de la imagen"
+                    placeholder="Ingrese el ID de la imagen"
                     required
                 />
                 <button type="submit">Eliminar Imagen</button>

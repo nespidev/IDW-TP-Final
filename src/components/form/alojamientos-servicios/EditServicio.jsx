@@ -47,7 +47,7 @@ export default function EditServicio() {
         <form onSubmit={handleSubmit} className="container-rect-redondeado">
             <h2>Actualizar Servicio por ID</h2>
             <div className='descripcion-boton'>
-                    {/* <label htmlFor="id"></label> */}
+
                     <input
                         type="text"
                         id="id"
@@ -58,7 +58,7 @@ export default function EditServicio() {
                         required
                         className='input-id-alojamiento'
                     />
-                    {/* <label htmlFor="nombre"></label> */}
+
                     <input
                         type="text"
                         id="nombre"
