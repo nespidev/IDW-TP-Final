@@ -42,7 +42,7 @@ export default function Home() {
                     <h2>Habitaciones mejor puntuadas</h2>
                 </div>
                 <div className="habitacion">
-                    <a className="hipervinculo-habitacion"  href="#"><img className="img-cuadrada" src="src/assets/img/hotel1.jpg" alt="habitacion"/></a>
+                    <a className="hipervinculo-habitacion"  href="#"><img className="img-cuadrada" src="src/assets/img/alojamiento1.jpg" alt="habitacion"/></a>
                     <div className="texto-habitacion">
                         <h4><a className="nombre-hotel" href="#">Grand Hotel</a></h4>
                         <h6>Buenos Aires, calle LaCalle 404</h6>
@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
 
                 <div className="habitacion">
-                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="src/assets/img/hotel2.jpg" alt="habitacion"/></a>
+                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="src/assets/img/alojamiento2.jpg" alt="habitacion"/></a>
                     <div className="texto-habitacion">
                         <h4><a className="nombre-hotel" href="#">Luxury Palace</a></h4>
                         <h6>Cordoba, Av. UnaAvenda 1910</h6>
@@ -62,7 +62,7 @@ export default function Home() {
                 </div>
 
                 <div className="habitacion">
-                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="src/assets/img/hotel3.jpg" alt="habitacion"/></a>
+                    <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="src/assets/img/alojamiento3.jpg" alt="habitacion"/></a>
                     <div className="texto-habitacion">
                         <h4><a className="nombre-hotel" href="#">Deluxe Dreams</a></h4>
                         <h6>Rio Negro, Av. NuestraAvenida 64</h6>

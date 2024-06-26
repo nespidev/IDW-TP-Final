@@ -10,7 +10,7 @@ import EditAlojamiento from '../components/form/alojamientos/EditAlojamientos.js
 import AllAlojamientos from '../components/form/alojamientos/AllAlojamientos.jsx';
 import AlojamientosTipo from '../components/form/alojamientos-tipo/AlojamientosTipo.jsx';
 import Servicios from '../components/form/alojamientos-servicios/Servicios.jsx';
-
+import Imagenes from '../components/form/alojamientos-imagenes/Imagenes.jsx';
 
 export default function Alojamientos() {
     const [refresh, setRefresh] = useState(false);
@@ -37,6 +37,7 @@ export default function Alojamientos() {
                 <Route path='all' element={<AllAlojamientos />}></Route>
                 <Route path='tipos' element={<AlojamientosTipo />}></Route>
                 <Route path='servicios' element={<Servicios />}></Route>
+                <Route path='imagenes' element={<Imagenes />}></Route>
                 
             </Routes>
         </div>
