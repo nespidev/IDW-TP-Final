@@ -405,6 +405,7 @@ footer {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .admin-button {
@@ -416,7 +417,7 @@ header {
 }
 
 .admin-button {
-  margin: auto 10px;
+  margin: 10px 10px;
   cursor: pointer;
   color: white;
   border-color: white;

@@ -5,9 +5,9 @@ export default function Navbar() {
         <nav>
             <ul>
                 <li ><Link className={location.pathname === '/' ? 'activo' : ''} to="/">Inicio</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos' ? 'activo' : ''} to="/Alojamientos">Alojamientos</Link></li>
-                <li><Link className={location.pathname === '/Contacto' ? 'activo' : ''}to="/Contacto">Contacto</Link></li>
-                <li><Link className={location.pathname === '/Institucional' ? 'activo' : ''} to="/Institucional">Institucional</Link></li>
+                <li><Link className={location.pathname === '/alojamientos' ? 'activo' : ''} to="/alojamientos">Alojamientos</Link></li>
+                <li><Link className={location.pathname === '/contacto' ? 'activo' : ''}to="/contacto">Contacto</Link></li>
+                <li><Link className={location.pathname === '/institucional' ? 'activo' : ''} to="/institucional">Institucional</Link></li>
             </ul>
         </nav>
     );

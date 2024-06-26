@@ -17,15 +17,15 @@ export default function Sidebar() {
                 {isVisible ? '<' : '>'}
             </button>
             <ul>
-                <li><Link className={location.pathname === '/Alojamientos' ? 'activo' : ''} to="/Alojamientos">Agregar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/delete' ? 'activo' : ''} to="/Alojamientos/delete">Eliminar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/get' ? 'activo' : ''} to="/Alojamientos/get">Buscar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/edit' ? 'activo' : ''} to="/Alojamientos/edit">Editar</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/all' ? 'activo' : ''} to="/Alojamientos/all">Todos</Link></li>
+                <li><Link className={location.pathname === '/admin' ? 'activo' : ''} to="/admin">Agregar</Link></li>
+                <li><Link className={location.pathname === '/admin/delete' ? 'activo' : ''} to="/admin/delete">Eliminar</Link></li>
+                <li><Link className={location.pathname === '/admin/get' ? 'activo' : ''} to="/admin/get">Buscar</Link></li>
+                <li><Link className={location.pathname === '/admin/edit' ? 'activo' : ''} to="/admin/edit">Editar</Link></li>
+                <li><Link className={location.pathname === '/admin/all' ? 'activo' : ''} to="/admin/all">Todos</Link></li>
                 <div className='linea-h' />
-                <li><Link className={location.pathname === '/Alojamientos/tipos' ? 'activo' : ''} to="/Alojamientos/tipos">Tipos</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/servicios' ? 'activo' : ''} to="/Alojamientos/servicios">Servicios</Link></li>
-                <li><Link className={location.pathname === '/Alojamientos/imagenes' ? 'activo' : ''} to="/Alojamientos/imagenes">Imágenes</Link></li>
+                <li><Link className={location.pathname === '/admin/tipos' ? 'activo' : ''} to="/admin/tipos">Tipos</Link></li>
+                <li><Link className={location.pathname === '/admin/servicios' ? 'activo' : ''} to="/admin/servicios">Servicios</Link></li>
+                <li><Link className={location.pathname === '/admin/imagenes' ? 'activo' : ''} to="/admin/imagenes">Imágenes</Link></li>
             </ul>
             {!isVisible && (
             <button onClick={toggleSidebar} className="toggle-button hidden">

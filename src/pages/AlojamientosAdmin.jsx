@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import Sidebar from '../components/Sidebar.jsx';
-import './Alojamientos.css';
+import './AlojamientosAdmin.css';
 import AddAlojamiento from '../components/form/alojamientos/AddAlojamiento.jsx';
 import GetAlojamiento from '../components/form/alojamientos/GetAlojamiento.jsx';
 import DeleteAlojamiento from '../components/form/alojamientos/DeleteAlojamiento.jsx';
@@ -12,7 +12,7 @@ import AlojamientosTipo from '../components/form/alojamientos-tipo/AlojamientosT
 import Servicios from '../components/form/alojamientos-servicios/Servicios.jsx';
 import Imagenes from '../components/form/alojamientos-imagenes/Imagenes.jsx';
 
-export default function Alojamientos() {
+export default function AlojamientosAdmin() {
     const [refresh, setRefresh] = useState(false);
 
     const handleRefresh = () => {

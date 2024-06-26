@@ -6,7 +6,7 @@ export default function Header() {
             <div className="logo">
                 <Link to="/"><img src="src/assets/idwcheckin.svg" alt="Voy.com"/></Link>
             </div>
-            <button className="admin-button">Admin</button>
+            <Link className={location.pathname === '/Alojamientos' ? 'activo' : ''} to="/admin"><button className="admin-button">Admin</button></Link>
         </header>
     );
 }
