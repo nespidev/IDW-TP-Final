@@ -33,11 +33,7 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                 const response = await fetch(`http://localhost:3001/alojamientosServicios/getAlojamientoServicio/${formData.idAlojamiento}`);
                 if (response.ok) {
                     const data = await response.json();
-                    if (Array.isArray(data)) {
-                        const serviciosIds = data.map(item => item.idServicio.toString());
-                        setServiciosAsociados(data);
-                        setSelectedServicios(serviciosIds);
-                    } else if (data.idServicio) { // Si data no es un array, manejamos el caso en que es un objeto único
+                    if (data.idServicio) {
                         setServiciosAsociados([data]);
                         setSelectedServicios([data.idServicio.toString()]);
                     } else {
