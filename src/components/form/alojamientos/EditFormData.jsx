@@ -7,7 +7,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
 
     // Obtener todos los servicios disponibles
     useEffect(() => {
-        console.log(formData.idAlojamiento);
         const fetchServicios = async () => {
             try {
                 const response = await fetch('http://localhost:3001/servicio/getAllServicios');
@@ -31,12 +30,21 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
     useEffect(() => {
         const fetchServiciosAlojamiento = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/alojamientosServicios/getAlojamientoServicios/${formData.idAlojamiento}`);
+                const response = await fetch(`http://localhost:3001/alojamientosServicios/getAlojamientoServicio/${formData.idAlojamiento}`);
                 if (response.ok) {
                     const data = await response.json();
-                    const serviciosIds = data.map(item => item.idServicio.toString());
-                    setServiciosAsociados(data);
-                    setSelectedServicios(serviciosIds);
+                    if (Array.isArray(data)) {
+                        const serviciosIds = data.map(item => item.idServicio.toString());
+                        setServiciosAsociados(data);
+                        setSelectedServicios(serviciosIds);
+                    } else if (data.idServicio) { // Si data no es un array, manejamos el caso en que es un objeto único
+                        setServiciosAsociados([data]);
+                        setSelectedServicios([data.idServicio.toString()]);
+                    } else {
+                        console.error('Respuesta inesperada del servidor:', data);
+                        setServiciosAsociados([]);
+                        setSelectedServicios([]);
+                    }
                 } else {
                     console.error('Error al obtener los servicios del alojamiento');
                     alert('Error al obtener los servicios del alojamiento');
@@ -68,8 +76,6 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
 
         try {
             handleUpdateAlojamiento(e)
-
-            console.log('corriendo handleSubmit en EditFormData')
             // Eliminar servicios desmarcados
             const serviciosAEliminar = serviciosAsociados.filter(serv => !selectedServicios.includes(serv.idServicio.toString()));
             for (const servicio of serviciosAEliminar) {
