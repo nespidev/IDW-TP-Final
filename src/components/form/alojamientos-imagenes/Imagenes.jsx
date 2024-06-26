@@ -7,13 +7,13 @@ import GetImagen from './GetImagen.jsx';
 export default function Imagenes() {
 
     return (
-        <div className='pagina-alojamientos-seccion'>
+        <>
             <AddImagen />
             <DeleteImagen />
             <EditImagen />
             <GetImagen />
             <AllImagenes />
 
-        </div>
+        </>
     );
 }

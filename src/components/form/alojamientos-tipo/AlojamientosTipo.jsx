@@ -14,12 +14,12 @@ export default function AlojamientosTipo() {
     };
 
     return (
-        <div className='pagina-alojamientos-seccion'>
+        <>
             <AddTipoDeAlojamiento onAdd={handleRefresh} />
             <EditTipoDeAlojamiento onEdit={handleRefresh} />
             <DeleteTipoDeAlojamiento onDelete={handleRefresh} />
             <GetTipoDeAlojamientoById refresh={refresh} />
             <GetTiposDeAlojamientos refresh={refresh} />
-        </ div>
+        </>
     );
 }

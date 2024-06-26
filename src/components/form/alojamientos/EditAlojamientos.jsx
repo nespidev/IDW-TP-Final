@@ -105,17 +105,19 @@ export default function EditAlojamiento() {
         <div className="container-rect-redondeado">
             <h2>Editar Alojamiento</h2>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="id">ID del Alojamiento:</label>
-                    <input
-                        type="text"
-                        id="id"
-                        name="id"
-                        value={id}
-                        onChange={handleIdChange}
-                    />
+                <div className='descripcion-boton'>
+                    <div className="form-group">
+                        <label htmlFor="id">ID del Alojamiento:</label>
+                        <input
+                            type="text"
+                            id="id"
+                            name="id"
+                            value={id}
+                            onChange={handleIdChange}
+                        />
+                    </div>
+                    <button type="submit">Cargar Datos</button>
                 </div>
-                <button type="submit">Cargar Datos</button>
             </form>
 
             {Object.values(formData).some(value => value !== '') && (

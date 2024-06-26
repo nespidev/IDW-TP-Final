@@ -8,12 +8,12 @@ import EditServicio from './EditServicio.jsx';
 export default function Servicios() {
 
     return (
-        <div className='pagina-alojamientos-seccion'>
+        <>
             <AddServicio />
             <GetServicio />
             <EditServicio />
             <DeleteServicio />
             <AllServicios />
-        </div>
+        </>
     );
 }

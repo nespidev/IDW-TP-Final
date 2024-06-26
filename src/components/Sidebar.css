@@ -10,6 +10,7 @@
   position: sticky;
   top: 5vh; /* Espacio desde la parte superior */
   transition: transform 0.3s ease; /* Para animar la aparición y desaparición */
+  z-index: 10;
 }
 
 .sidebar.hidden {

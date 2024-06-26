@@ -29,17 +29,20 @@ export default function Alojamientos() {
         <div className = "pagina-alojamientos">
 
             <Sidebar></Sidebar>
-            <Routes>
-                <Route path={'/'} element={<AddAlojamiento onAdd={handleRefresh}/>}></Route>
-                <Route path='get' element={<GetAlojamiento />}></Route>
-                <Route path='delete' element={<DeleteAlojamiento />}></Route>
-                <Route path='edit' element={<EditAlojamiento />}></Route>
-                <Route path='all' element={<AllAlojamientos />}></Route>
-                <Route path='tipos' element={<AlojamientosTipo />}></Route>
-                <Route path='servicios' element={<Servicios />}></Route>
-                <Route path='imagenes' element={<Imagenes />}></Route>
-                
-            </Routes>
+            <div className='pagina-alojamientos-seccion'>
+                <Routes>
+
+                        <Route path={'/'} element={<AddAlojamiento onAdd={handleRefresh}/>}></Route>
+                        <Route path='get' element={<GetAlojamiento />}></Route>
+                        <Route path='delete' element={<DeleteAlojamiento />}></Route>
+                        <Route path='edit' element={<EditAlojamiento />}></Route>
+                        <Route path='all' element={<AllAlojamientos />}></Route>
+                        <Route path='tipos' element={<AlojamientosTipo />}></Route>
+                        <Route path='servicios' element={<Servicios />}></Route>
+                        <Route path='imagenes' element={<Imagenes />}></Route>
+
+                </Routes>
+            </div>
         </div>
     </>
     );
