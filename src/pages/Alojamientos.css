@@ -220,6 +220,7 @@ input:focus, input:hover{
 
 .form-group-servicios {
     width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;

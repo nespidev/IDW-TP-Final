@@ -218,9 +218,9 @@ export default function AddAlojamiento({ onAdd }) {
                             </div>
                         ))}
                     </div>
-                </div>
-                <button type="submit">Enviar</button>
+                </div>   
             </div>
+            <button type="submit">Enviar</button>
         </form>
     );
 }
