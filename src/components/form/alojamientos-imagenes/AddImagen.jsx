@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function AddImagen() {
-    const [fileName, setFileName] = useState('');
+    const [rutaArchivo, setFileName] = useState('');
     const [alojamientoId, setAlojamientoId] = useState('');
     const [alojamientoTitulo, setAlojamientoTitulo] = useState('');
     const [message, setMessage] = useState('');
@@ -43,10 +43,10 @@ export default function AddImagen() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const fullPath = `src/assets/${fileName}`;
+        const fullPath = `src/assets/img/${rutaArchivo}`;
 
         // Verificar si el nombre del archivo tiene una extensión
-        if (!fileName.includes('.')) {
+        if (!rutaArchivo.includes('.')) {
             setError('El nombre del archivo debe contener una extensión válida (por ejemplo, archivo.jpg)');
             return;
         }
@@ -94,12 +94,12 @@ export default function AddImagen() {
                 <strong> | Título de Alojamiento: </strong>{alojamientoTitulo && <span>{alojamientoTitulo}</span>}
             </div>
             <div className='descripcion-boton'>
-                <label htmlFor="fileName">src/assets/</label>
+                <label htmlFor="rutaArchivo">src/assets/</label>
                 <input 
                     type="text" 
-                    id="fileName" 
-                    name="fileName" 
-                    value={fileName} 
+                    id="rutaArchivo" 
+                    name="rutaArchivo" 
+                    value={rutaArchivo} 
                     onChange={handleFileNameChange}
                     placeholder="archivo.jpg"
                     required

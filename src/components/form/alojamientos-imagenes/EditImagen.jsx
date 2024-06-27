@@ -28,6 +28,11 @@ export default function EditImagen() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const fullPath = `src/assets/img/${rutaArchivo}`;
+            if (!rutaArchivo.includes('.')) {
+                setError('El nombre del archivo debe contener una extensión válida (por ejemplo, archivo.jpg)');
+                return;
+            } 
             const response = await fetch(`http://localhost:3001/imagen/updateImagen/${id}`, {
                 method: 'PUT',
                 headers: {
@@ -35,7 +40,7 @@ export default function EditImagen() {
                 },
                 body: JSON.stringify({
                     idAlojamiento,
-                    RutaArchivo: rutaArchivo
+                    RutaArchivo: fullPath
                 })
             });
             if (response.ok) {
