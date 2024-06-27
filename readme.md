@@ -1,7 +1,7 @@
-Alumnos: Alejandra Ruggiero - Juan Nahuel Espinola Grativol
+Alumnos: María Alejandra Ruggiero - Juan Nahuel Espinola Grativol
 
 Instrucciones:
-    Cargar el Dump
+    Cargar el Dump.
     Cambiar la contraseña en 'config/dbConfig.js' a la que tenga en su BD.
     Instalar paquetes con 'npm isntall'
     En 'src/' correr 'node index.js'para inicar la api.
