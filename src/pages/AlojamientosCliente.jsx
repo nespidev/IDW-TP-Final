@@ -94,18 +94,41 @@ export default function AlojamientosCliente() {
     }, []);
 
     if (loading) {
-        return <p>Cargando...</p>;
+        return (
+            <>
+            <section className="intro">
+                <h1>Cargando...</h1>
+                <p>Cargando los mejores destinos para vos</p>
+            </section>
+            <div className='container-fullscreen'></div>
+            </>
+        );
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return (
+            <>
+            <section className="intro">
+                <h1>Error: {error}</h1>
+                <p>Hubo un error inesperado, volvé en unos minutos...</p>
+            </section>
+            <div className='container-fullscreen'></div>
+            </>
+        );
     }
 
     return (
-        <div className='container habitaciones'>
-            {alojamientos.map((alojamiento) => (
-                <CardAlojamiento key={alojamiento.idAlojamiento} alojamiento={alojamiento} />
-            ))}
-        </div>
+        <>
+            <section className="intro">
+                <h1>Encuentra tu alojamiento ideal</h1>
+                <p>Hospedate con estilo en los mejores destinos del país</p>
+            </section>
+
+            <div className='container habitaciones'>
+                {alojamientos.map((alojamiento) => (
+                    <CardAlojamiento key={alojamiento.idAlojamiento} alojamiento={alojamiento} />
+                ))}
+            </div>
+    </>
     );
 }

@@ -6,13 +6,13 @@ const CardAlojamiento = ({ alojamiento }) => {
     return (
         <div className="habitacion">
             {/* <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src={rutaImagen} alt="Imagen del alojamiento"/></a> */}
-            <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src="src/assets/img/alojamiento3.jpg" alt="habitacion"/></a>
+            <a className="hipervinculo-habitacion" href="#"><img className="img-cuadrada" src={rutaImagen} alt="habitacion"/></a>
             <div className="texto-habitacion">
                 <h4><a className="titulo-alojamiento" href="#">{Titulo}</a></h4>
                 <h6>{tipoDescripcion}, Latitud: {Latitud}, Longitud: {Longitud}</h6>
                 <p>Servicios: {servicios.join(', ')}</p>
             </div>
-            <h4 className="precio">{PrecioPorDia} por día</h4>
+            <h4 className="precio">${PrecioPorDia}</h4>
         </div>
     );
 }
