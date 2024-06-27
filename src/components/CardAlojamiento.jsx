@@ -9,7 +9,12 @@ const CardAlojamiento = ({ alojamiento }) => {
             <div className="texto-habitacion">
                 <h4><a className="titulo-alojamiento" href="#">{Titulo}</a></h4>
                 <h6>{tipoDescripcion}, Latitud: {Latitud}, Longitud: {Longitud}</h6>
-                <p>Servicios: {servicios.join(', ')}.</p>
+                <p>
+                    Estado: {Estado}<br />
+                    Servicios: {servicios.join(', ')}.<br />
+                    Dormitorios: {CantidadDormitorios}<br />
+                    Baños: {CantidadBanios}.
+                </p>
             </div>
             <h4 className="precio">${PrecioPorDia}</h4>
         </div>
