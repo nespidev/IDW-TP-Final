@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) => {
+const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, setMessage, setError }) => {
     const [serviciosDisponibles, setServiciosDisponibles] = useState([]);
     const [serviciosAsociados, setServiciosAsociados] = useState([]);
     const [selectedServicios, setSelectedServicios] = useState([]);
@@ -15,16 +15,16 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     setServiciosDisponibles(data);
                 } else {
                     console.error('Error al obtener los servicios');
-                    alert('Error al obtener los servicios');
+                    setError('Error al obtener los servicios');
                 }
             } catch (error) {
                 console.error('Error: ', error);
-                alert('Error al obtener los servicios. Por favor, intente de nuevo.');
+                setError('Error al obtener los servicios. Por favor, intente de nuevo.');
             }
         };
 
         fetchServicios();
-    }, []);
+    }, [setError]);
 
     // Obtener servicios asociados al alojamiento por editar
     useEffect(() => {
@@ -43,18 +43,18 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                     }
                 } else {
                     console.error('Error al obtener los servicios del alojamiento');
-                    alert('Error al obtener los servicios del alojamiento');
+                    setError('Error al obtener los servicios del alojamiento');
                 }
             } catch (error) {
                 console.error('Error: ', error);
-                alert('Error al obtener los servicios del alojamiento. Por favor, intente de nuevo.');
+                setError('Error al obtener los servicios del alojamiento. Por favor, intente de nuevo.');
             }
         };
 
         if (formData.idAlojamiento) {
             fetchServiciosAlojamiento();
         }
-    }, [formData.idAlojamiento]);
+    }, [formData.idAlojamiento, setError]);
 
     // Manejar cambios en los checkboxes de servicios
     const handleCheckboxChange = (e) => {
@@ -71,7 +71,8 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
         e.preventDefault();
 
         try {
-            handleUpdateAlojamiento(e)
+            await handleUpdateAlojamiento(e);
+
             // Eliminar servicios desmarcados
             const serviciosAEliminar = serviciosAsociados.filter(serv => !selectedServicios.includes(serv.idServicio.toString()));
             for (const servicio of serviciosAEliminar) {
@@ -95,10 +96,10 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                 });
             }
 
-            alert('Alojamiento actualizado con éxito.');
+            setMessage('Alojamiento actualizado con éxito.');
         } catch (error) {
             console.error('Error al actualizar el alojamiento:', error);
-            alert('Error al actualizar el alojamiento. Por favor, intente de nuevo.');
+            setError('Error al actualizar el alojamiento. Por favor, intente de nuevo.');
         }
     };
 

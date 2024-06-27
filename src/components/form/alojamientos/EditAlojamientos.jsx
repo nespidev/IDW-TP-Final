@@ -62,13 +62,11 @@ export default function EditAlojamiento() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('corriendo handleSubmit en EditAlojamiento')
         await fetchAlojamientoData(id);
     };
 
     const handleUpdateAlojamiento = async (e) => {
         e.preventDefault();
-        console.log('corriendo handleUpdateAlojamiento en EditAlojamiento')
         try {
             const response = await fetch(`http://localhost:3001/alojamiento/putAlojamiento/${id}`, {
                 method: 'PUT',
@@ -125,6 +123,8 @@ export default function EditAlojamiento() {
                     formData={formData}
                     handleInputChange={handleInputChange}
                     handleUpdateAlojamiento={handleUpdateAlojamiento}
+                    setMessage={setMessage}
+                    setError={setError}
                 />
             )}
 
