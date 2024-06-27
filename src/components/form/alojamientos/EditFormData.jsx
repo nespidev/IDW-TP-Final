@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, setMessage, setError }) => {
+const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) => {
     const [serviciosDisponibles, setServiciosDisponibles] = useState([]);
     const [serviciosAsociados, setServiciosAsociados] = useState([]);
     const [selectedServicios, setSelectedServicios] = useState([]);
@@ -15,25 +15,27 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, se
                     setServiciosDisponibles(data);
                 } else {
                     console.error('Error al obtener los servicios');
-                    setError('Error al obtener los servicios');
                 }
             } catch (error) {
                 console.error('Error: ', error);
-                setError('Error al obtener los servicios. Por favor, intente de nuevo.');
             }
         };
 
         fetchServicios();
-    }, [setError]);
+    }, []);
 
     // Obtener servicios asociados al alojamiento por editar
     useEffect(() => {
         const fetchServiciosAlojamiento = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/alojamientosServicios/getAlojamientoServicio/${formData.idAlojamiento}`);
+                const response = await fetch(`http://localhost:3001/alojamientosServicios/getAlojamientoServicios/${formData.idAlojamiento}`);
                 if (response.ok) {
                     const data = await response.json();
-                    if (data.idServicio) {
+                    if (Array.isArray(data)) {
+                        const serviciosIds = data.map(item => item.idServicio.toString());
+                        setServiciosAsociados(data);
+                        setSelectedServicios(serviciosIds);
+                    } else if (data.idServicio) { // Si data no es un array, manejamos el caso en que es un objeto único
                         setServiciosAsociados([data]);
                         setSelectedServicios([data.idServicio.toString()]);
                     } else {
@@ -43,18 +45,16 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, se
                     }
                 } else {
                     console.error('Error al obtener los servicios del alojamiento');
-                    setError('Error al obtener los servicios del alojamiento');
                 }
             } catch (error) {
                 console.error('Error: ', error);
-                setError('Error al obtener los servicios del alojamiento. Por favor, intente de nuevo.');
             }
         };
 
         if (formData.idAlojamiento) {
             fetchServiciosAlojamiento();
         }
-    }, [formData.idAlojamiento, setError]);
+    }, [formData.idAlojamiento]);
 
     // Manejar cambios en los checkboxes de servicios
     const handleCheckboxChange = (e) => {
@@ -71,8 +71,7 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, se
         e.preventDefault();
 
         try {
-            await handleUpdateAlojamiento(e);
-
+            handleUpdateAlojamiento(e)
             // Eliminar servicios desmarcados
             const serviciosAEliminar = serviciosAsociados.filter(serv => !selectedServicios.includes(serv.idServicio.toString()));
             for (const servicio of serviciosAEliminar) {
@@ -96,10 +95,10 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento, se
                 });
             }
 
-            setMessage('Alojamiento actualizado con éxito.');
+            alert('Alojamiento actualizado con éxito.');
         } catch (error) {
             console.error('Error al actualizar el alojamiento:', error);
-            setError('Error al actualizar el alojamiento. Por favor, intente de nuevo.');
+            alert('Error al actualizar el alojamiento. Por favor, intente de nuevo.');
         }
     };
 
