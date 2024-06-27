@@ -95,10 +95,8 @@ const EditFormData = ({ formData, handleInputChange, handleUpdateAlojamiento }) 
                 });
             }
 
-            alert('Alojamiento actualizado con éxito.');
         } catch (error) {
             console.error('Error al actualizar el alojamiento:', error);
-            alert('Error al actualizar el alojamiento. Por favor, intente de nuevo.');
         }
     };
 

@@ -1,8 +1,8 @@
 /* Sidebar.css */
 .sidebar {
-  width: 250px; /* Ajusta el ancho según sea necesario */
+  width: 250px; /* Este ancho se debe quitar de margen a pagina-alojamientos-seccion*/
   height: 90vh; /* Sidebar toma el 90% de la altura de la pantalla */
-  margin: 5vh 0; /* Añade márgenes superior e inferior */
+  margin: 5vh 0;
   border-radius: 0 70px 70px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -11,7 +11,7 @@
   top: 5vh; /* Espacio desde la parte superior */
   transition: transform 0.3s ease; /* Para animar la aparición y desaparición */
   z-index: 10;
-  outline: 4px solid var(--oscuro);
+  outline: 3px solid var(--oscuro);
 }
 
 .sidebar.hidden {
